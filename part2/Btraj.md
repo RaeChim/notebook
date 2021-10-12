@@ -2,7 +2,11 @@
 sort: 3
 ---
 
-# FastLab论文笔记(1)
+# Btraj论文笔记
+
+项目地址：(https://github.com/HKUST-Aerial-Robotics/Btraj)
+
+---
 
 # Online Safe Trajectory Generation For Quadrotors Using Fast Marching Method and Bernstein Basis Polynomial
 
@@ -97,7 +101,7 @@ b_n^i(t) =  \begin{pmatrix}
 \tag{3}
 $$
 
-其中，$$ n $$是基的degree，$$ (n \quad i)^T $$是二项式系数。Bernstein基构成的多项式称为Bezier曲线，写作：
+其中，$$ n $$是基的度，$$ (n \quad i)^T $$是二项式系数。Bernstein基构成的多项式称为Bezier曲线，写作：
 
 $$ B_j(t) 
 = c_j^0 b_n^0(t) + c_j^1 b_n^1(t) + \ldots +c_j^n b_n^n(t)
@@ -200,9 +204,21 @@ $$
 （$$ \mathbf{A}_{ie} \mathbf {c} \le \mathbf{b}_{ie} $$）
 其中，$$ \mathbf{c} = [\mathbf{c}_1,\mathbf{c}_2,\ldots,\mathbf{c}_m] $$。轨迹生成问题可以化成：
 
-$$ \min \quad \mathbf{c}^T \mathbf{Q}_o c
-   \text{s.t.} \quad \mathbf{A}_{eq} \mathbf {c} = \mathbf{b}_{eq}
+$$ \begin{equation}\begin{split} 
+\min \quad  & \mathbf{c}^T \mathbf{Q}_o c
+\text{s.t.} \quad & \mathbf{A}_{eq} \mathbf{c} = \mathbf{b}_{eq}
+                  & \mathbf{A}_{ie} \mathbf{c} \le  \mathbf{b}_{ie}
+                  & \mathbf{c}_j \in \Omega _j , \quad j=1,2,\ldots,m
+\end{split}\end{equation}
+\tag{13}
 $$
+
+是一个凸二次规划问题（quadratic program,<font color="#33cc00">QP</font>），可以在多项式时间内由一般现成的凸优化器解决。
+
+<br />
+
+## 
+
 
 
 
