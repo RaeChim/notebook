@@ -47,11 +47,34 @@ sort: 4
 
 &emsp;&emsp;本前端kinodynamic路径搜索算法源自[hybrid-state A* ](https://journals.sagepub.com/doi/10.1177/0278364909359210)。它会寻找安全且kinodynamic可行的路径，并最小化在voxel grid map中的持续时间和控制成本。如Alg.1和Fig.2所示，搜索环路和标准A* 类似，其中$$ \mathcal{P} $$和$$ \mathcal{C} $$分别代表open表和closed表。图边采用四旋翼动力学的运动原语（primitive），而不是直线。用结构体 *Node*记录原语、原语结束时的体素和$$ g_c $$、$$ f_c $$成本（Sect 3.2）。**Expand()**迭代地扩大体素栅格地图，那些在同一个体素结束的（除了拥有最小$$ f_c $$的）会被删除（**Prune()**）。然后**CheckFeasible()**会检查留下的原语的安全性和动态可行性。这个过程一直持续到任意一个原语到达目标或者**AnalyticExpand()** 成功。
 
+<div align=center>
 ![Algorithm 1](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/7083369/8764082/8758904/gao.t3-2927938-large.gif){:height="50%" width="50%"}
+</div>
 
 ### 3.1 Primitives Generation
 
 &emsp;&emsp;首先，讨论**Expand()**中使用的motion primitives生成。四旋翼系统的微分平坦使得我们可以用三个独立的1-D时间参数的多项式函数来表示轨迹[\[1\]](https://ieeexplore.ieee.org/document/5980409)。
+
+$$ \mathbf{p}(t):=[p_x(t),p_y(t),p_z(t)]^T , 
+p_\mu (t) = \sum_{k=0}^K a_kt^k
+\tag{1}
+$$
+
+其中，$$ \mu \in \{x,y,z\} $$。从四旋翼系统的角度看，它符合线性时不变（LTI）系统。令
+$$ \mathbf{x}(t) 
+:= [\mathbf{p}(t)^T, \dot{\mathbf{p}}(t)^T, \ldots, \mathbf{p}^{(n-1)}(t)^T]^T 
+\in \mathcal{X} \subset \mathbb{R}^{3n}
+$$
+为状态向量。令
+$$ \mathbf{u}(t) 
+:= \mathbf{p}^{(n)}(t) \in \mathcal{U}:=[-u_{\max},u_{\max}] 
+\subset \mathbb{R}^3
+$$ 
+为控制输入。状态空间模型可以定义为：
+
+<!-- $$ 
+\dot{\mathbf{x}}
+$$ -->
 
 
 
@@ -62,10 +85,12 @@ sort: 4
 
 一些可参考的内容:
 
-[路径规划中的Hybrid A*算法](https://zhuanlan.zhihu.com/p/161660932)  
-[自动驾驶运动规划-Hybird A*算法](https://zhuanlan.zhihu.com/p/139489196)  
-[自动驾驶运动规划-Hybird A*算法(续)](https://zhuanlan.zhihu.com/p/144815425)
+&emsp;&emsp;[路径规划中的Hybrid A*算法](https://zhuanlan.zhihu.com/p/161660932)
+
+&emsp;&emsp;[自动驾驶运动规划-Hybird A*算法](https://zhuanlan.zhihu.com/p/139489196)
+
+&emsp;&emsp;[自动驾驶运动规划-Hybird A*算法(续)](https://zhuanlan.zhihu.com/p/144815425)
 
 
-<!-- $$  $$ -->
-<!-- <font color="#33cc00"></font> -->
+$$  $$
+<font color="#33cc00"></font><!-- 绿色 -->
