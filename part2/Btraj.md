@@ -4,7 +4,8 @@ sort: 3
 
 # Btraj论文笔记
 
-项目地址：(https://github.com/HKUST-Aerial-Robotics/Btraj)
+[Github仓库](https://github.com/HKUST-Aerial-Robotics/Btraj)&emsp;
+[论文](https://ieeexplore.ieee.org/document/8462878)
 
 ---
 
