@@ -49,6 +49,7 @@ sort: 4
 &emsp;&emsp;本前端kinodynamic路径搜索算法源自[hybrid-state A* ](https://journals.sagepub.com/doi/10.1177/0278364909359210)。它会寻找安全且kinodynamic可行的路径，并最小化在voxel grid map中的持续时间和控制成本。如Alg.1和Fig.2所示，搜索环路和标准A* 类似，其中$$ \mathcal{P} $$和$$ \mathcal{C} $$分别代表open表和closed表。图边采用四旋翼动力学的运动原语（primitive），而不是直线。用结构体 *Node*记录primitive、primitive结束时的体素和$$ g_c $$、$$ f_c $$成本（Sect 3.2）。**Expand()**迭代地扩大体素栅格地图，那些在同一个体素结束的（除了拥有最小$$ f_c $$的）会被删除（**Prune()**）。然后**CheckFeasible()**会检查留下的primitives的安全性和动态可行性。这个过程一直持续到任意一个primitive到达目标或者**AnalyticExpand()** 成功。
 
 <div align=center>
+
 ![Algorithm 1](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/7083369/8764082/8758904/gao.t3-2927938-large.gif){:height="50%" width="50%"}
 </div>
 
@@ -108,21 +109,21 @@ $$ \{-u_{\max},-\frac{r-1}{r}u_{\max},\ldots,\frac{r-1}{r}u_{\max},u_{\max} \} $
 &emsp;&emsp;由于我们希望找到一条时间和控制代价最优的轨迹，所以把轨迹的代价函数定义为
 
 $$ \mathcal{J}(T) 
-= \int_0^T{||\mathbf{u}(t)||^2 dt + \rho T}
+= \int_0^T{\|\mathbf{u}(t)\|^2 dt + \rho T}
 \tag{4}
 $$
 
-在此定义下，**EdgeCost()**按$$ e_c=(||\mathbf{u}_d||^2 + \rho) \tau $$计算离散输入$$ \mathbf{u}(t) = \mathbf{u}_d $$，持续时间$$ \tau $$时生成的运动primitives的代价。
+在此定义下，**EdgeCost()**按$$ e_c=(\|\mathbf{u}_d\|^2 + \rho) \tau $$计算离散输入$$ \mathbf{u}(t) = \mathbf{u}_d $$，持续时间$$ \tau $$时生成的运动primitives的代价。
 
-&emsp;&emsp;沿用A\*中的术语，用$$ g_c $$表示从开始状态$$ \mathbf{x}(s) $$到当前状态$$ \mathbf{x}(c) $$的最优路径的实际代价。令这条最优路径由$$ J $$个primitives构成，$$ g_c $$可以由$$ g_c = \sum_{j=1}^J{(||\mathbf{u}_{dj}||^2 + \rho) \tau} $$计算得到。
+&emsp;&emsp;沿用A\*中的术语，用$$ g_c $$表示从开始状态$$ \mathbf{x}(s) $$到当前状态$$ \mathbf{x}(c) $$的最优路径的实际代价。令这条最优路径由$$ J $$个primitives构成，$$ g_c $$可以由$$ g_c = \sum_{j=1}^J{(\|\mathbf{u}_{dj}\|^2 + \rho) \tau} $$计算得到。
 
 &emsp;&emsp;一个可行且含有效信息的启发函数对于加速A\*的搜索十分重要。因此，本文利用Pontryagins minimum principle来计算可以最小化从$$ \mathbf{x}(c) $$到目标状态$$ \mathbf{x}(g) $$的$$ \mathcal{J}(T) $$的闭式轨迹：
 
 $$ \begin{equation}\begin{split} 
-  p_{\mu}^*(t)
+& p_{\mu}^*(t)
 = \frac{1}{6}\alpha_{\mu}t^3 + \frac{1}{2}\beta_{\mu}t^2 + v_{\mu c} + p_{\mu c} \\
 
-  \begin{bmatrix} \alpha_{\mu} \\ \beta_{\mu} \end{bmatrix}
+& \begin{bmatrix} \alpha_{\mu} \\ \beta_{\mu} \end{bmatrix}
 = \frac{1}{T} 
   \begin{bmatrix}
       -12 & 6T \\
@@ -133,7 +134,7 @@ $$ \begin{equation}\begin{split}
       v_{\mu g} - v_{\mu c}
   \end{bmatrix} \\
 
-  \mathcal{J}^*(T)
+& \mathcal{J}^*(T)
 = \sum_{\mu \in \{x,y,z \}}
     {\left(   \frac{1}{3}\alpha_{\mu}^2 T^3 
             + \alpha_{\mu} \beta_{\mu} T^2 
@@ -166,6 +167,8 @@ $$  $$
 ### 附录
 
 一些可参考的内容:
+
+&emsp;&emsp;[Practical Search Techniques in Path Planning for Autonomous Driving](https://ai.stanford.edu/~ddolgov/papers/dolgov_gpp_stair08.pdf)
 
 &emsp;&emsp;[路径规划中的Hybrid A\*算法](https://zhuanlan.zhihu.com/p/161660932)
 
