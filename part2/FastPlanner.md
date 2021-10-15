@@ -44,14 +44,17 @@ sort: 4
 
 <br />
 
-# 3 KINODYNAMIC PATH SEARCHING
+## 3 KINODYNAMIC PATH SEARCHING
 
-&emsp;&emsp;本前端kinodynamic路径搜索算法源自[hybrid-state A* ](https://journals.sagepub.com/doi/10.1177/0278364909359210)。它会寻找安全且kinodynamic可行的路径，并最小化在voxel grid map中的持续时间和控制成本。如Alg.1和Fig.2所示，搜索环路和标准A* 类似，其中$$ \mathcal{P} $$和$$ \mathcal{C} $$分别代表open表和closed表。图边采用四旋翼动力学的运动原语（primitive），而不是直线。用结构体 *Node*记录primitive、primitive结束时的体素和$$ g_c $$、$$ f_c $$成本（Sect 3.2）。**Expand()**迭代地扩大体素栅格地图，那些在同一个体素结束的（除了拥有最小$$ f_c $$的）会被删除（**Prune()**）。然后**CheckFeasible()**会检查留下的primitives的安全性和动态可行性。这个过程一直持续到任意一个primitive到达目标或者**AnalyticExpand()** 成功。
+<img src="../../notebook/part2/images/Fast%20Plannner/Fig2.gif"
+width=600px >
 
-<div align=center>
+&emsp;&emsp;本前端kinodynamic路径搜索算法源自[hybrid-state A* ](https://journals.sagepub.com/doi/10.1177/0278364909359210)。它会寻找安全且kinodynamic可行的路径，并最小化在voxel grid map中的持续时间和控制成本。如Alg.1和Fig.2所示，搜索环路和标准A* 类似，其中$$ \mathcal{P} $$和$$ \mathcal{C} $$分别代表open表和closed表。图边（ graph edge）采用四旋翼动力学的运动基元（primitive），而不是直线。用结构体 *Node*记录primitive、primitive结束时的体素和$$ g_c $$、$$ f_c $$成本（Sect 3.2）。**Expand()**迭代地扩大体素栅格地图，那些在同一个体素结束的（除了拥有最小$$ f_c $$的）会被删除（**Prune()**）。然后**CheckFeasible()**会检查留下的primitives的安全性和动态可行性。这个过程一直持续到任意一个primitive到达目标或者**AnalyticExpand()** 成功。
 
-![Algorithm 1](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/7083369/8764082/8758904/gao.t3-2927938-large.gif){:height="50%" width="50%"}
-</div>
+<!-- ![Algorithm 1](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/7083369/8764082/8758904/gao.t3-2927938-large.gif){:height="50%" width="50%"} -->
+
+<img src="../../notebook/part2/images/Fast%20Plannner/Alg1.gif"
+width=600px >
 
 ### 3.1 Primitives Generation
 
@@ -169,6 +172,8 @@ $$  $$
 一些可参考的内容:
 
 &emsp;&emsp;[Practical Search Techniques in Path Planning for Autonomous Driving](https://ai.stanford.edu/~ddolgov/papers/dolgov_gpp_stair08.pdf)
+
+&emsp;&emsp;[混合A*算法研究](https://blog.csdn.net/robinvista/article/details/106279968)
 
 &emsp;&emsp;[路径规划中的Hybrid A\*算法](https://zhuanlan.zhihu.com/p/161660932)
 
