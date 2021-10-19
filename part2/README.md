@@ -19,4 +19,4 @@ sort: 3
 
 [FAST Lab](http://zju-fast.com/)：主要集中在无人机运动规划
 
-[BUAA RFCG](http://rfly.buaa.edu.cn/index.html)
+[BUAA RFCG](http://rfly.buaa.edu.cn/index.html)（北航可靠飞行控制研究组）
