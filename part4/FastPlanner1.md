@@ -1,5 +1,5 @@
 ---
-sort: 4
+sort: 2
 ---
 
 # Fast Planner论文笔记(1)
@@ -46,14 +46,14 @@ sort: 4
 
 ## 3 KINODYNAMIC PATH SEARCHING
 
-<img src="../../notebook/part2/images/Fast%20Plannner/Fig2.gif"
+<img src="../../notebook/part4/images/Fast%20Plannner/Fig2.gif"
 width=400px >
 
 &emsp;&emsp;本前端kinodynamic路径搜索算法源自[hybrid-state A* ](https://journals.sagepub.com/doi/10.1177/0278364909359210)。它会寻找安全且kinodynamic可行的路径，并最小化在voxel grid map中的持续时间和控制成本。如Alg.1和Fig.2所示，搜索环路和标准A* 类似，其中$$ \mathcal{P} $$和$$ \mathcal{C} $$分别代表open表和closed表。图边（ graph edge）采用四旋翼动力学的运动基元（primitive），而不是直线。用结构体 *Node*记录primitive、primitive结束时的体素和$$ g_c $$、$$ f_c $$成本（Sect 3.2）。**Expand()**迭代地扩大体素栅格地图，那些在同一个体素结束的（除了拥有最小$$ f_c $$的）会被删除（**Prune()**）。然后**CheckFeasible()**会检查留下的primitives的安全性和动态可行性。这个过程一直持续到任意一个primitive到达目标或者**AnalyticExpand()** 成功。
 
 <!-- ![Algorithm 1](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/7083369/8764082/8758904/gao.t3-2927938-large.gif){:height="50%" width="50%"} -->
 
-<img src="../../notebook/part2/images/Fast%20Plannner/Alg1.gif"
+<img src="../../notebook/part4/images/Fast%20Plannner/Alg1.gif"
 width=400px >
 
 ### 3.1 Primitives Generation
@@ -155,13 +155,6 @@ $$
 ### 3.4 Optimality and Completeness
 
 &emsp;&emsp;理论上讲，无法保证路径搜索的最优性和完整性，但是实际的表现是令人满意的。对于最优性而言，第3.1节中的评价表明牺牲最优性是可以接受的和可调整的。此外，给出的初始路径在最优路径的附近，第4章的优化会找到最优解。对于完整性而言，第3.1节中的评价表明该方法在大多数情况下是可以找到可行解的。另外，本文的方法也可以拓展支持变时间的（variable-duration）的primitives，文献[\[15\]](https://journals.sagepub.com/doi/10.1177/0278364909359210)中的变分辨率voxel grid可以有更强的完整性保证。
-
-
-
-
-
-$$  $$
-<font color="#33cc00"></font><!-- 绿色 -->
 
 
 <br />

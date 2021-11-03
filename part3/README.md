@@ -1,5 +1,5 @@
 ---
-sort: 2
+sort: 3
 ---
 
 ## Optimization & Optimal Control
@@ -7,7 +7,7 @@ sort: 2
 &emsp;&emsp;开始学路径规划之后，发现自己的控制理论方面基础还很薄弱，所以回顾了研究生课程Optimization & Optimal Control的部分内容。
 
 ```
-笔记中的图表、公式、定义等编号都是对应《Optimal Control Systems》这本书的。
+主要是《Optimal Control Systems》这本书的笔记，图表、公式、定义等编号都是对应书里的。
 ```
 
 参考书籍：
