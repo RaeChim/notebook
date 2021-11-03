@@ -46,15 +46,19 @@ sort: 2
 
 ## 3 KINODYNAMIC PATH SEARCHING
 
-<img src="../../notebook/part4/images/Fast%20Plannner/Fig2.gif"
-width=400px >
+<center>
+    <figure>
+        <img src="../../notebook/part4/images/Fast%20Plannner/Fig2.gif" width=400px >
+    </figure>
+</center>
 
 &emsp;&emsp;本前端kinodynamic路径搜索算法源自[hybrid-state A* ](https://journals.sagepub.com/doi/10.1177/0278364909359210)。它会寻找安全且kinodynamic可行的路径，并最小化在voxel grid map中的持续时间和控制成本。如Alg.1和Fig.2所示，搜索环路和标准A* 类似，其中$$ \mathcal{P} $$和$$ \mathcal{C} $$分别代表open表和closed表。图边（ graph edge）采用四旋翼动力学的运动基元（primitive），而不是直线。用结构体 *Node*记录primitive、primitive结束时的体素和$$ g_c $$、$$ f_c $$成本（Sect 3.2）。**Expand()**迭代地扩大体素栅格地图，那些在同一个体素结束的（除了拥有最小$$ f_c $$的）会被删除（**Prune()**）。然后**CheckFeasible()**会检查留下的primitives的安全性和动态可行性。这个过程一直持续到任意一个primitive到达目标或者**AnalyticExpand()** 成功。
 
-<!-- ![Algorithm 1](https://ieeexplore.ieee.org/mediastore_new/IEEE/content/media/7083369/8764082/8758904/gao.t3-2927938-large.gif){:height="50%" width="50%"} -->
-
-<img src="../../notebook/part4/images/Fast%20Plannner/Alg1.gif"
-width=400px >
+<center>
+    <figure>
+        <img src="../../notebook/part4/images/Fast%20Plannner/Alg1.gif" width=400px >    
+    </figure>
+</center>
 
 ### 3.1 Primitives Generation
 
