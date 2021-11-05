@@ -27,11 +27,19 @@ sort : 1
 * $$ \mathbb{R}^3 $$，$$ SE(2) $$和$$ SO(3) $$是三维流形
 * $$ \mathbb{R}^6 $$，$$ T^6 $$和$$ SE(3) $$是六维流形
 
-## Transforming Configuration and Velocity Representations
+## 8 Transforming Configuration and Velocity Representations
 
 &emsp;&emsp;e.g. $$q$$表示机器人手臂的连接角度，$$x$$表示终端传感器在周围空间内作为刚体的构形。规划操作的时候，用$$x$$表示更方便，但是控制机器人手臂的时候用$$q$$变量更方便，所以需要在两种表达方式之间切换。然而$$\mathcal{Q}$$和$$\mathcal{M}$$往往不是同胚的，甚至两个空间的纬度都不相等。
 
-&emsp;&emsp;定义<font color="#3FBF3F">foward kinematics map</font>$$\color{green}{\Phi : \mathcal{Q}} \rightarrow \mathcal{M}$$，以及<font color="#3FBF3F">inverse kinematics map</font>$$\color{green}{\Phi^{-1} : \mathcal{M}} \rightarrow \mathcal{Q}$$。
+&emsp;&emsp;定义<font color="#3FBF3F">foward kinematics map </font>$$\color{green}{\Phi : \mathcal{Q}} \rightarrow \mathcal{M}$$，以及<font color="#3FBF3F">inverse kinematics map </font>$$\color{green}{\Phi^{-1} : \mathcal{M}} \rightarrow \mathcal{Q}$$。随着机器人系统移动，$$ \dot{x} = \frac{dx}{dt} $$和$$ \dot{q} = \frac{dq}{dt} $$的关系为
+
+$$ \dot{x} = \frac{\partial \Phi}{\partial q} = J(q) \dot{q} $$
+
+其中，$$ J $$是映射$$ \Phi $$的Jacobian，即微分$$ D \Phi $$（见附录C）。Jacobian也可以用于把一组坐标表示的力转化到另一组（见第4章4.7和第10章）。
+
+```note
+关于构型空间的笔记目前还不全，但是后面我应该还会再反复读这一章以及附录里关于泛函分析的一些内容，这章里有很多思想很妙，解释了一些现有的规划方法为什么是可以这样做的。但是，作为运动规划的基础，这方面的内容很少被论文提及，这也是我第一次接触configuration space的概念。所以说还是得看一些教科书，对问题的理解才能更系统。
+```
 
 
 <!-- 蓝 -->
