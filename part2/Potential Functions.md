@@ -14,19 +14,38 @@ sort : 2
 本章主要讨论一阶系统（i.e. 忽略动力学），所以把梯度看成速度向量而非力向量。
 ```
 
-<!-- fig 4.1 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_1.JPG" width=300px>
+        <figcaption>
+            Fig 4.1 负电荷吸引，正电荷排斥，生成了一条绕开障碍物到达目标点的路径，由虚线表示
+        </figcaption>
+    </figure>
+</center>
 
 &emsp;&emsp;势函数可以看作地形，机器人在上面从高值态运动到低值态。机器人沿着势函数的负梯度下降，沿着这种路径的方法被称为<font color="#3FBF3F">梯度下降（gradient descent）</font>，i.e. $$ \dot{c}(t) = - \nabla U(c(t)) $$。
 
-<!-- fig 4.2 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_2.JPG" width=360px>
+        <figcaption> Fig 4.2 临节点的不同类型：（上）函数的图像，（下）函数的梯度 </figcaption>
+    </figure>
+</center>
 
 &emsp;&emsp;机器人会停在梯度为零的点$$q^*$$（$$\nabla U(q^*) = 0$$），这种点称为<font color="#3FBF3F">临界点</font>。该点的类型（最大值、最小值或鞍点，如图4.2所示）由二阶微分决定。对于实值函数，二阶微分为<font color="#3FBF3F">Hessian矩阵</font>。若Hessien在$$q^*$$处非奇异，则$$q^*$$处的临界点是<font color="#3FBF3F">非退化的</font>，表明该点是孤立的。Hessian正定对应局部极小值；负定对应局部极大值。一般来说，只考虑Hessian非奇异的势函数，i.e. 只含孤立临界点的势函数，这样的势函数没有平坦的部分。
 
 ```note
 对于梯度下降法，无需计算Hessian，因为机器人一般只能在局部极小值点终止运动，而非局部极大值点或鞍点。只有局部极小值点才是稳定的，因为机器人在该点受到扰动后还是会回到这个极小值点。目标点应该落在局部极小值点。
 ```
-
-<!-- fig 4.3 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_3.JPG" width=400px>
+        <figcaption> 
+            Fig 4.3 (a)含有三个障碍物的圆形边界的构型空间；(b)能量面的势函数；
+            (c)能量面等值线图；(d)势函数的梯度向量
+        </figcaption>
+    </figure>
+</center>
 
 &emsp;&emsp;有许多有效且可以在线计算的势函数，但是它们有一个**共通的问题：局部极小值的位置和目标不匹配**。也就是说，很多势函数无法得出完备的路径规划器。解决这个问题有两种思路：1.利用基于采样的规划器对势场进行增广；2.定义只有一个局部极小值点的势函数，被称为navigation function。尽管完备（或解析完备），这些方法都需要在规划前对构型空间有充分的了解。
 
@@ -36,7 +55,7 @@ sort : 2
 
 ## 1 Additive Attractive/Repulsive Potential
 
-&emsp;&emsp;$$\mathcal{Q_{free}}$$中最简单的势函数就是attracti/repulsive potenti。目标会吸引机器人，而障碍物会排斥它，它们共同作用引导机器人远离障碍到达目标点。势函数可以构造成二者之和$$ U(q) = U_{att}(q) + U_{rep}(q) $$。
+&emsp;&emsp;$$\mathcal{Q_{free}}$$中最简单的势函数就是attractive/repulsive potential。目标会吸引机器人，而障碍物会排斥它，它们共同作用引导机器人远离障碍到达目标点。势函数可以构造成二者之和$$ U(q) = U_{att}(q) + U_{rep}(q) $$。
 
 ### The Attractive Potential
 
@@ -44,23 +63,37 @@ sort : 2
 
 &emsp;&emsp;选上面这种势函数在进行数值实现时，梯度下降会有很多问题，因为吸引势在原点是不连续的。因此，我们倾向于<font color="#3399ff">选择连续可微的势函数</font>，这样吸引势的大小随着机器人接近$$q_{goal}$$变小。这种势函数最简单的就是随与目标的距离二次增长的，e.g. $$ U_{att}(q) = \frac{1}{2} \xi d^2 (q,q_{goal}) $$，其梯度为$$ \nabla U_{att}(q) = \frac{1}{2} \xi \nabla d^2 (q,q_{goal}) = \xi (q,q_{goal}) $$ ，是从$$q$$开始指向远离$$q_{goal}$$方向的向量，大小与二者之间的距离成正比。也就是说，当机器人离目标较远时，速度较快，距离变进时，速度会变慢。
 
-<!-- fig 4.4 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_4.JPG" width=400px>
+        <figcaption> 
+            Fig 4.4 (a)吸引梯度向量场；(b)吸引等势线；(c)吸引势的图像
+        </figcaption>
+    </figure>
+</center>
 
 &emsp;&emsp;这种势函数当机器人离目标很远的时候会生成过大的速度，所以我们可以把这两种函数结合起来。
 
 $$  U_{att}(q)
 = \begin{cases}
     \frac{1}{2} \xi d^2 (q,q_{goal}) 
-    ,& \qquad d(q,q_{goal}) \le d_{goal}^* \\
+    & , \quad d(q,q_{goal}) \le d_{goal}^* \\
     d_{goal}^* \xi d(q,q_{goal}) - \frac{1}{2} \xi (d_{goal}^*)^2
-    ,& \qquad d(q,q_{goal}) \gt d_{goal}^* 
+    & , \quad d(q,q_{goal}) \gt d_{goal}^* 
 \end{cases}
 \tag{4.2}
 $$
 
 $$  \nabla U_{att}(q)
 = \begin{cases}
+    \xi (q-q_{goal}) & ,\quad d(q,q_{goal}) \le d_{goal}^* \\
+    \frac{d_{goal}^* \xi (q-q_{goal})}{d(q,q_{goal})}
+    & , \quad d(q,q_{goal}) \gt d_{goal}^* 
+\end{cases}
+\tag{4.3}
+$$
 
+其中，$$ d_{goal}^* $$是规划器在圆锥曲线和二次曲线之间切换时对应的与目标点的距离。
 
 
 
