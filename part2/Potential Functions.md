@@ -95,6 +95,24 @@ $$
 
 其中，$$ d_{goal}^* $$是规划器在圆锥曲线和二次曲线之间切换时对应的与目标点的距离。
 
+<br />
+
+## The Repulsive Potential
+
+&emsp;&emsp;排斥势会使机器人远离障碍物，排斥力的大小与机器人离障碍物的距离有关。因此，排斥势往往用与最近的障碍物的距离$$D(q)$$来定义
+
+$$  U_{rep}(q) = 
+\begin{cases}
+  \frac{1}{2} \eta \left( \frac{1}{D(q)} - \frac{1}{\mathcal{Q}^*} \right)^2
+  \quad , & D(q) \le \mathcal{Q}^* \\
+  0 \quad , & D(q) \gt \mathcal{Q}^*
+\end{cases}
+\tag{4.4}
+$$
+
+其梯度为
+
+
 
 
 <!-- 蓝 -->
