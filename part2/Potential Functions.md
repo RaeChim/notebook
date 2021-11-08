@@ -27,7 +27,7 @@ sort : 2
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_2.JPG" width=360px>
+        <img src="../../notebook\part2\images\fig4_2.JPG" width=400px>
         <figcaption> Fig 4.2 临节点的不同类型：（上）函数的图像，（下）函数的梯度 </figcaption>
     </figure>
 </center>
@@ -39,7 +39,7 @@ sort : 2
 ```
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_3.JPG" width=400px>
+        <img src="../../notebook\part2\images\fig4_3.JPG" width=450px>
         <figcaption> 
             Fig 4.3 (a)含有三个障碍物的圆形边界的构型空间；(b)能量面的势函数；
             (c)能量面等值线图；(d)势函数的梯度向量
@@ -65,7 +65,7 @@ sort : 2
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_4.JPG" width=400px>
+        <img src="../../notebook\part2\images\fig4_4.JPG" width=420px>
         <figcaption> 
             Fig 4.4 (a)吸引梯度向量场；(b)吸引等势线；(c)吸引势的图像
         </figcaption>
