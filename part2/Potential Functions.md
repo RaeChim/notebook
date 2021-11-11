@@ -99,7 +99,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_5.JPG" width=320px>
+        <img src="../../notebook\part2\images\fig4_5.JPG" width=300px>
         <figcaption> 
             Fig 4.5 排斥势只在障碍物的附近有效
         </figcaption>
@@ -133,9 +133,9 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_6.JPG" width=320px>
+        <img src="../../notebook\part2\images\fig4_6.JPG" width=300px>
         <figcaption> 
-            Fig 4.6 $$x$$到$$\mathcal{QO}_i$$的距离为到$$\mathcal{QO}_i$$上最近的点的距离。梯度是指向背离最近点方向的单位向量。
+            Fig 4.6 $x$到$\mathcal{QO}_i$的距离为到$\mathcal{QO}_i$上最近的点的距离。梯度是指向背离最近点方向的单位向量。
         </figcaption>
     </figure>
 </center>
