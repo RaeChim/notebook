@@ -95,11 +95,16 @@ $$
 
 其中，$$ d_{goal}^* $$是规划器在圆锥曲线和二次曲线之间切换时对应的与目标点的距离。
 
-<br />
-
 ### The Repulsive Potential
 
-<!-- fig 4.5 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_5.JPG" width=320px>
+        <figcaption> 
+            Fig 4.5 排斥势只在障碍物的附近有效
+        </figcaption>
+    </figure>
+</center>
 
 &emsp;&emsp;排斥势会使机器人远离障碍物，排斥力的大小与机器人离障碍物的距离有关。因此，排斥势往往用与最近的障碍物的距离$$D(q)$$来定义
 
@@ -126,7 +131,14 @@ $$
 
 其中，$$ \mathcal{Q} \in \mathbb{R} $$使得机器人可以忽略距离足够远的障碍，$$\eta$$可以看作是排斥梯度的增益。这些标量通常通过试错和误差来决定。（如图4.5所示。）
 
-<!-- fig 4.6 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_6.JPG" width=320px>
+        <figcaption> 
+            Fig 4.6 $$x$$到$$\mathcal{QO}_i$$的距离为到$$\mathcal{QO}_i$$上最近的点的距离。梯度是指向背离最近点方向的单位向量。
+        </figcaption>
+    </figure>
+</center>
 
 &emsp;&emsp;在对这个方法进行数值实现的时候，路径可能会在某个点周围振荡，因为它们与障碍的距离相等，i.e. 不平滑的$$D$$上的点。为了避免这种振荡，用单个障碍物的距离来重新定义排斥势函数，其中$$d_i(q)$$是与障碍$$\mathcal{QO_i}$$的距离，如
 
@@ -155,13 +167,19 @@ $$
 
 其中，$$\mathcal{Q}_i^*$$定义了障碍$$\mathcal{QO_i}$$作用域的大小。那么$$ U_{rep}(q) = \sum_{i=1}{n} U_{rep_i}(q) $$。<font color="#3399ff">如果只有凸障碍或能分解成凸块的非凸障碍，就不会发生振荡，因为规划器在最近的点处不会发生突变。</font>
 
+<br />
+
 ## 2 Gradient Descent
 
 &emsp;&emsp;梯度下降法是解决优化问题的著名方法。梯度下降算法如algorithm 4所示。
 
-<!-- alg 4 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\alg4_1.JPG" width=400px>
+    </figure>
+</center>
 
-$$q(i)$$表示第i次迭代后$$q$$的值，最终的路径由迭代序列$$ {q(0),q(1),\ldots,q(i)} $$构成。标量$$\alpha(i)$$的值决定了第i次迭代的步长。$$\alpha(i)$$的值不能过大，否则机器人会”跳进”障碍物；也不能过小，否则会花费过多时间。在运动规划问题中，$$\alpha(i)$$的取值通常是特设的或者根据经验选取的。在优化书籍中有很多系统的选取方法。最后一点，梯度为零的情况很难准确达到，一般用$$ \parallel \nabla U(q(i)) \lt \epsilon $$替代。
+&emsp;&emsp;$$q(i)$$表示第i次迭代后$$q$$的值，最终的路径由迭代序列$$ {q(0),q(1),\ldots,q(i)} $$构成。标量$$\alpha(i)$$的值决定了第i次迭代的步长。$$\alpha(i)$$的值不能过大，否则机器人会”跳进”障碍物；也不能过小，否则会花费过多时间。在运动规划问题中，$$\alpha(i)$$的取值通常是特设的或者根据经验选取的。在优化书籍中有很多系统的选取方法。最后一点，梯度为零的情况很难准确达到，一般用$$ \parallel \nabla U(q(i)) \lt \epsilon \parallel $$替代。
 
 
 <!-- 蓝 -->
