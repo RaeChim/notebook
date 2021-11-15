@@ -202,6 +202,19 @@ $$
 
 ### 3.2 Brushfire Algorithm: A Method to Compute Distance on a Grid
 
+&emsp;&emsp;这部分会介绍通过用栅格地图来计算距离的方法，栅格是被称为像素的二维正方形元素数组。当像素内完全没有障碍物的时候，其值为0；当像素完全或部分被障碍物占据时，其值为1。
+
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_8.JPG" width=360px>
+        <figcaption> 
+            Fig 4.8 四点 VS 八点 连接
+        </figcaption>
+    </figure>
+</center>
+
+&emsp;&emsp;
+
 
 <!-- 蓝 -->
 <font color="#3399ff"></font>
