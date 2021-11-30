@@ -287,7 +287,7 @@ Barraquand和Latombe提出了搜索的方法来克服利用势函数规划时的
 
 <br />
 
-## Navigation Potential Functions
+## 6 Navigation Potential Functions
 
 &emsp;&emsp;先前在第2章中，bug算法是未知环境下完全基于传感器的规划器，但是只能在平面构型空间使用。而在本章的开始，吸引/排斥势函数可以应用于很多不同类型的构型空间，但是存在局部极小值的问题，并因此不完全。波前规划器解决了局部极小值问题，但是需要时间和关于空间纬度呈指数上升的存储。本节将介绍一种新的势，只有一个最小值且只能适用于一种构型空间（二维、三维或更多）的表示与障碍物距离的函数。这种势函数被称为navigation function。
 
@@ -297,7 +297,7 @@ DEFINITION 4.6.4 函数$$ \phi : \mathcal{Q}_{free} \rightarrow [0,1] $$被称�
 * 在自由空间的边界均匀地取到最大值
 * Morse
 
-&emsp;&emsp;Morse函数的临界点都是非退化的。这意味着临界点都是孤立的，所以Morse函数用于梯度下降时，任意随机扰动就会破坏鞍点和最大值点的稳定性。在导航函数法中，将障碍物表示成$$ \left.\mathcal{QO}_i = \{ q \right| \beta_i(q) \le 0 \} $$，也就是说$$\beta_i(q)$$在$$\mathcal{QO}_i$$的内部为负，在$$\mathcal{QO}_i$$的边界为零，在$$\mathcal{QO}_i$$的外部为正。
+&emsp;&emsp;Morse函数的临界点都是非退化的。这意味着临界点都是孤立的，所以Morse函数用于梯度下降时，任意随机扰动就会破坏鞍点和最大值点的稳定性。在导航函数法中，将障碍物表示成$$ \mathcal{QO}_i = \{ q | \beta_i(q) \le 0 \} $$，也就是说$$\beta_i(q)$$在$$\mathcal{QO}_i$$的内部为负，在$$\mathcal{QO}_i$$的边界为零，在$$\mathcal{QO}_i$$的外部为正。
 
 
 <!-- 蓝 -->
