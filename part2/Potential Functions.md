@@ -297,7 +297,7 @@ DEFINITION 4.6.4 函数$$ \phi : \mathcal{Q}_{free} \rightarrow [0,1] $$被称�
 * 在自由空间的边界均匀地取到最大值
 * Morse
 
-&emsp;&emsp;Morse函数的临界点都是非退化的。这意味着临界点都是孤立的，所以Morse函数用于梯度下降时，任意随机扰动就会破坏鞍点和最大值点的稳定性。在导航函数法中，将障碍物表示成$$ \mathcal{QO}_i = \{ q \left.\right| \beta_i(q) \le 0 \} $$，也就是说$$\beta_i(q)$$在$$\mathcal{QO}_i$$的内部为负，在$$\mathcal{QO}_i$$的边界为零，在$$\mathcal{QO}_i$$的外部为正。
+&emsp;&emsp;Morse函数的临界点都是非退化的。这意味着临界点都是孤立的，所以Morse函数用于梯度下降时，任意随机扰动就会破坏鞍点和最大值点的稳定性。在导航函数法中，将障碍物表示成$$ \left.\mathcal{QO}_i = \{ q \right| \beta_i(q) \le 0 \} $$，也就是说$$\beta_i(q)$$在$$\mathcal{QO}_i$$的内部为负，在$$\mathcal{QO}_i$$的边界为零，在$$\mathcal{QO}_i$$的外部为正。
 
 
 <!-- 蓝 -->
