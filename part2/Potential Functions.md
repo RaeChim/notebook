@@ -299,6 +299,32 @@ DEFINITION 4.6.4 函数$$ \phi : \mathcal{Q}_{free} \rightarrow [0,1] $$被称�
 
 &emsp;&emsp;Morse函数的临界点都是非退化的。这意味着临界点都是孤立的，所以Morse函数用于梯度下降时，任意随机扰动就会破坏鞍点和最大值点的稳定性。在导航函数法中，将障碍物表示成$$ \mathcal{QO}_i = \{ q \vert \beta_i(q) \le 0 \} $$，也就是说$$\beta_i(q)$$在$$\mathcal{QO}_i$$的内部为负，在$$\mathcal{QO}_i$$的边界为零，在$$\mathcal{QO}_i$$的外部为正。
 
+### 6.1 Sphere-Space
+
+&emsp;&emsp;此方法初始假设构型空间的边界为一个球心位于$$q_0$$的球体，且有$$n$$个位于$$q_1,q_2,\ldots,q_n$$的障碍物。障碍物距离函数定义为
+
+$$\begin{aligned}
+  \beta_0(q) & = -d^2(q,q_0) + r_0^2 \\
+  \beta_i(q) & = d^2(q,q_i) - r_i^2
+\end{aligned}  
+$$
+
+其中，$$r_i$$为球体半径。此方法不再考虑到最近障碍物的距离或到各独立障碍物的距离，而是考虑其总和
+
+$$  \beta(q) = \sum_{i=0}^n {\beta_i(q)}
+\tag{4.8}
+$$
+
+$$\beta(q)$$在任意障碍物的边界上为零，在自由空间内部的各个点处均为正。这就<font color="#3399ff">假设了各个障碍物是不相交的</font>。
+
+&emsp;&emsp;此方法用$$\beta$$构成类似排斥函数，导航函数的吸引部分为到目标距离的力，i.e.
+
+$$  \gamma_{\kappa}(q) = (d(q,q_{goal}))^{2 \kappa}
+\tag{4.9}
+$$
+
+其中，$$\gamma_{\kappa}$$在目标处为零且当$$q$$远离目标时连续增长。函数$$\frac{\gamma_{\kappa}}}{\beta}(q)$$仅在目标处为零，当$$q$$到达任一障碍物边界时趋向无穷。更重要的是，对于足够大的$$\kappa$$，函数$$\frac{\gamma_{\kappa}}}{\beta}(q)$$<font color="#3399ff">有唯一的极小值</font>。从本质上讲，增大$$\kappa$$会使$$\frac{\gamma_{\kappa}}}{\beta}$$呈现以目标为中心的深碗的形式。同事，会让其他临界点被吸引向障碍物，因为障碍物的排斥作用范围相对吸引场的影响变小了。
+
 
 <!-- 蓝 -->
 <font color="#3399ff"></font>
