@@ -325,6 +325,14 @@ $$
 
 其中，$$\gamma_{\kappa}$$在目标处为零且当$$q$$远离目标时连续增长。函数$$\frac{\gamma_{\kappa}}{\beta}(q)$$仅在目标处为零，当$$q$$到达任一障碍物边界时趋向无穷。更重要的是，对于足够大的$$\kappa$$，函数$$\frac{\gamma_{\kappa}}{\beta}(q)$$<font color="#3399ff">有唯一的极小值</font>。从本质上讲，增大$$\kappa$$会使$$\frac{\gamma_{\kappa}}{\beta}$$呈现以目标为中心的深碗的形式。同时，会让其他临界点被吸引向障碍物，因为障碍物的排斥作用范围相对吸引场的影响变小了。
 
+&emsp;&emsp;在障碍物附近，只有障碍物有较大的影响。因此，局部极小值只可能出现在目标和障碍物之间的径向线上。在这条线靠近障碍物的边界处，$$\frac{\gamma_{\kappa}}{\beta}$$的Hessian不可能正定，因为当从障碍向目标移动时，$$\frac{\gamma_{\kappa}}{\beta}$$的值下降很快。因此对于足够大的$$\kappa$$，不存在除目标以外的极小值。
+
+&emsp;&emsp;尽管$$\frac{\gamma_{\kappa}}{\beta}$$有唯一的极小值，但是它的值也会很大，难以计算。因此，引入分析切换，定义为
+
+$$  \sigma_{\lambda}(x) = \frac {x} {\lambda + x},\quad \lambda \gt 0
+\tag{4.10}
+$$
+
 
 <!-- 蓝 -->
 <font color="#3399ff"></font>
