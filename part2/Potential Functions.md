@@ -333,6 +333,40 @@ $$  \sigma_{\lambda}(x) = \frac {x} {\lambda + x},\quad \lambda \gt 0
 \tag{4.10}
 $$
 
+<!-- tu 4.13 -->
+
+由于$$\sigma_{\lambda}(x)$$在$$x=0$$处为0，在$$x$$趋向于$$\infty$$时收敛到1，并且是连续的（图4.13），可以利用$$\sigma_{\lambda}(x)$$来约束函数$$\frac{\gamma_{\kappa}}{\beta}$$的值，i.e. 
+
+$$  s(q,\lambda) = \left( \sigma_{\lambda} \circ \frac{\gamma_{\kappa}}{\beta} \right) (q)
+                 = \left( \frac{\gamma_{\kappa}} {\lambda \beta + \gamma_{\kappa}} \right) (q)
+\tag{4.11}
+$$
+
+函数$$s(q,\lambda)$$在目标处值为零，在任意障碍的边界上有单一值，在自由空间内连续，并且对于足够大的$$\kappa$$有唯一的极小值。尽管如此，它还不一定是Morse函数，因为它可能有退化的临界点。所以，下面介绍另一个函数，它可以锐化$$s(q,\lambda)$使其临界点为非退化的，i.e.，这样$$s(q,\lambda)$$就可以变为Morse函数。此函数为
+
+$$  \xi_{\kappa}(x) = x^{\frac{1}{\kappa}}
+\tag{4.12}
+$$
+
+对于$$\lambda = 1$$，对应的在球形世界的导航函数为
+
+$$  \phi(q)
+= \left( \xi_{\kappa} \circ \sigma_1 \circ \frac{\gamma_{\kappa}}{\beta} \right) (q)
+= \frac {d^2 (q,q_{goal})} {[(d(q,q_{goal}))^{2\kappa} + \beta (q)]^{1 / \kappa}}
+\tag{4.13}
+$$
+
+在$$\kappa$$取有效大的数时，此函数只在$$q_{goal}$$处有唯一的最小值。
+
+<!-- 4.14 -->
+
+考虑如图4.14所示的构型空间。$$\kappa$$增大的效果如图4.15（$$\phi$$的等高线图）所示。
+
+<!-- 4.15 -->
+<!-- 4.16 -->
+
+从图4.16中可以看到势函数变陡峭、临界点受目标点吸引和局部极值变为鞍点的过程。不幸的是，这种变陡的处理会使得导航函数在靠近目标和离目标较远时过于平坦，在两者之间时变化又很陡峭。这很容易使梯度下降方法出现数值误差。
+
 
 <!-- 蓝 -->
 <font color="#3399ff"></font>
