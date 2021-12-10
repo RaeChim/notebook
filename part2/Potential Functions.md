@@ -333,7 +333,14 @@ $$  \sigma_{\lambda}(x) = \frac {x} {\lambda + x},\quad \lambda \gt 0
 \tag{4.10}
 $$
 
-<!-- tu 4.13 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_13.JPG" width=300px>
+        <figcaption> 
+            Fig 4.13 解析开关函数，用于将函数的范围映射到单位区间
+        </figcaption>
+    </figure>
+</center>
 
 由于$$\sigma_{\lambda}(x)$$在$$x=0$$处为0，在$$x$$趋向于$$\infty$$时收敛到1，并且是连续的（图4.13），可以利用$$\sigma_{\lambda}(x)$$来约束函数$$\frac{\gamma_{\kappa}}{\beta}$$的值，i.e. 
 
@@ -358,12 +365,35 @@ $$
 
 在$$\kappa$$取有效大的数时，此函数只在$$q_{goal}$$处有唯一的最小值。
 
-<!-- 4.14 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_14.JPG" width=260px>
+        <figcaption> 
+            Fig 4.14 含5个圆形障碍物的边界为圆的构型空间
+        </figcaption>
+    </figure>
+</center>
 
 考虑如图4.14所示的构型空间。$$\kappa$$增大的效果如图4.15（$$\phi$$的等高线图）所示。
 
-<!-- 4.15 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_15.JPG" width=400px>
+        <figcaption> 
+            Fig 4.15 κ=3,κ=4,κ=6,κ=7,κ=8和κ=10对应的导航函数
+        </figcaption>
+    </figure>
+</center>
+
 <!-- 4.16 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_16.JPG" width=400px>
+        <figcaption> 
+            Fig 4.16 κ=3,κ=4,κ=6,κ=7,κ=8和κ=10对应的导航函数
+        </figcaption>
+    </figure>
+</center>
 
 从图4.16中可以看到势函数变陡峭、临界点受目标点吸引和局部极值变为鞍点的过程。不幸的是，这种变陡的处理会使得导航函数在靠近目标和离目标较远时过于平坦，在两者之间时变化又很陡峭。这很容易使梯度下降方法出现数值误差。
 

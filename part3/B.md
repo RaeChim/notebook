@@ -48,6 +48,8 @@ $$\begin{aligned}
 \end{aligned}   \tag{B.1.6}
 $$
 
+其中，$$ \pmb{\Phi}(t,t_0) $$为系统的状态转移阵
+
 
 &emsp;&emsp;
 <br />
