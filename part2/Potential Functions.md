@@ -349,7 +349,7 @@ $$  s(q,\lambda) = \left( \sigma_{\lambda} \circ \frac{\gamma_{\kappa}}{\beta} \
 \tag{4.11}
 $$
 
-函数$$s(q,\lambda)$$在目标处值为零，在任意障碍的边界上有单一值，在自由空间内连续，并且对于足够大的$$\kappa$$有唯一的极小值。尽管如此，它还不一定是Morse函数，因为它可能有退化的临界点。所以，下面介绍另一个函数，它可以锐化$$s(q,\lambda)$使其临界点为非退化的，i.e.，这样$$s(q,\lambda)$$就可以变为Morse函数。此函数为
+函数$$s(q,\lambda)$$在目标处值为零，在任意障碍的边界上有单一值，在自由空间内连续，并且对于足够大的$$\kappa$$有唯一的极小值。尽管如此，它还不一定是Morse函数，因为它可能有退化的临界点。所以，下面介绍另一个函数，它可以锐化$$s(q,\lambda)$$使其临界点为非退化的，i.e.，这样$$s(q,\lambda)$$就可以变为Morse函数。此函数为
 
 $$  \xi_{\kappa}(x) = x^{\frac{1}{\kappa}}
 \tag{4.12}
@@ -367,7 +367,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_14.JPG" width=260px>
+        <img src="../../notebook\part2\images\fig4_14.JPG" width=200px>
         <figcaption> 
             Fig 4.14 含5个圆形障碍物的边界为圆的构型空间
         </figcaption>
@@ -378,17 +378,16 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_15.JPG" width=400px>
+        <img src="../../notebook\part2\images\fig4_15.JPG" width=500px>
         <figcaption> 
             Fig 4.15 κ=3,κ=4,κ=6,κ=7,κ=8和κ=10对应的导航函数
         </figcaption>
     </figure>
 </center>
 
-<!-- 4.16 -->
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_16.JPG" width=400px>
+        <img src="../../notebook\part2\images\fig4_16.JPG" width=500px>
         <figcaption> 
             Fig 4.16 κ=3,κ=4,κ=6,κ=7,κ=8和κ=10对应的导航函数
         </figcaption>
