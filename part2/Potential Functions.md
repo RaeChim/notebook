@@ -327,7 +327,7 @@ $$
 
 &emsp;&emsp;在障碍物附近，只有障碍物有较大的影响。因此，局部极小值只可能出现在目标和障碍物之间的径向线上。在这条线靠近障碍物的边界处，$$\frac{\gamma_{\kappa}}{\beta}$$的Hessian不可能正定，因为当从障碍向目标移动时，$$\frac{\gamma_{\kappa}}{\beta}$$的值下降很快。因此对于足够大的$$\kappa$$，不存在除目标以外的极小值。
 
-&emsp;&emsp;尽管$$\frac{\gamma_{\kappa}}{\beta}$$有唯一的极小值，但是它的值也会很大，难以计算。因此，引入分析切换，定义为
+&emsp;&emsp;尽管$$\frac{\gamma_{\kappa}}{\beta}$$有唯一的极小值，但是它的值也会很大，难以计算。因此，引入分析开关，定义为
 
 $$  \sigma_{\lambda}(x) = \frac {x} {\lambda + x},\quad \lambda \gt 0
 \tag{4.10}
@@ -402,11 +402,43 @@ $$
 
 <!-- 4.17 -->
 
-&emsp;&emsp;这个部分将会讨论由星形的构型空间和障碍物组成的星形空间。星形集合$$S$$至少有一个点在其它所有集合中点的视线范围内，i.e. $$ \exist x \text{ such that } \forall y \in S,\quad tx+(1-t)y \in S \quad \forall t \in [0,1] $$。如图4.17所示。<font color="#3399ff">所有凸集都是星形的，但反过来不成立。</font>
+&emsp;&emsp;这个部分将会讨论由星形的构型空间和障碍物组成的星形空间。<font color="#3FBF3F">星形集</font>$$S$$至少有一个点在其它所有集合中点的视线范围内，i.e. $$ \exist x \text{ such that } \forall y \in S,\quad tx+(1-t)y \in S \quad \forall t \in [0,1] $$。如图4.17所示。<font color="#3399ff">所有凸集都是星形的，但反过来不成立。</font>
 
 <!-- 4.18 -->
 
 &emsp;&emsp;对于两个自由构型空间$$M$$和$$F$$，如果$$\phi : M \rightarrow [0,1]$$是$$M$$上的一个导航函数，并且存在映射$$h : F \rightarrow M$$为微分同胚映射，i.e. 此映射是平滑的、双射的且有平滑的反函数，那么$$\Phi = \phi \circ h$$为$$F$$上的导航函数（如图4.18所示）。<font color="#3399ff">微分同胚映射可以保证临界点是一一对应的。</font>
+
+&emsp;&emsp;构造星形和球形空间之间的映射$$h$$，可以利用缩放映射
+
+$$  T_i(q) = \nu _i(q) (q-q_i) + p_i
+\tag{4.14}
+$$
+
+其中
+
+$$  \nu_i(q) = (1+\beta_i(q))^{1/2} \frac{r_i}{d(q,q_i)}
+\tag{4.15}
+$$
+
+其中，$$q_i$$为星形集的中心，$$p_i$$和$$r_i$$分别为球形障碍物的中心和半径。这里由$$\beta_i(q)$$定义的星形集在内部为负，边界处为零，外部为正。
+
+&emsp;&emsp;**注意**：若$$q_i$$在星形障碍物的边界上，那么$$(1+\beta_i(q))=1$$，因此$$ T_i = r_i \frac{q-q_i}{d(q,q_i)} + p_i $$。也就是说，$$T_i(q)$$将星形集边界上的点映射为了一个球。
+
+&emsp;&emsp;对于星形障碍物$$QO_i$$，定义分析开关
+
+$$  s_i(q,\lambda)
+= \left( \sigma_{\lambda} \circ \frac{ \gamma_{\kappa} \bar{\beta}_i }{ \beta_i } \right) (q)
+= \left( \frac{ \gamma_{\kappa} \bar{\beta}_i }{\gamma_{\kappa} \bar{\beta}_i + \lambda \beta_i  } \right) (q)
+\tag{4.16}
+$$
+
+其中，
+
+$$  \bar{\beta}_i } = \prod{j = 0, j \neq i}{n} \beta_j
+\tag{4.17}
+$$
+
+i.e. $$bar{\beta}_i$$在除了当前障碍物$$QO_i$$外的障碍物边界上为零。**注意**：$$s_i(q,\lambda)$$在$$QO_i$$的边界上为1，但在目标和除$$QO_i$$外障碍物的边界上为0。
 
 
 <!-- 蓝 -->
