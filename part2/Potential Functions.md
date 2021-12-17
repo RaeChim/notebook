@@ -367,7 +367,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_14.JPG" width=200px>
+        <img src="../../notebook\part2\images\fig4_14.JPG" width=180px>
         <figcaption> 
             Fig 4.14 含5个圆形障碍物的边界为圆的构型空间
         </figcaption>
@@ -400,11 +400,25 @@ $$
 
 &emsp;&emsp;球形空间的结果只是通往更具一般性的规划器的第一步。有了能在球形空间使用的导航函数，就可以找到和它微分同胚的其它构型空间的导航函数。
 
-<!-- 4.17 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_17.JPG" width=240px>
+        <figcaption> 
+            Fig 4.17 （左）星形集。（右）非星形集
+        </figcaption>
+    </figure>
+</center>
 
-&emsp;&emsp;这个部分将会讨论由星形的构型空间和障碍物组成的星形空间。<font color="#3FBF3F">星形集</font>$$S$$至少有一个点在其它所有集合中点的视线范围内，i.e. $$ \exist x \text{ such that } \forall y \in S,\quad tx+(1-t)y \in S \quad \forall t \in [0,1] $$。如图4.17所示。<font color="#3399ff">所有凸集都是星形的，但反过来不成立。</font>
+&emsp;&emsp;这个部分将会讨论由星形的构型空间和障碍物组成的星形空间。<font color="#3FBF3F">星形集</font>$$S$$至少有一个点在其它所有集合中点的视线范围内，i.e. $$ \exists x \text{ such that } \forall y \in S,\quad tx+(1-t)y \in S \quad \forall t \in [0,1] $$。如图4.17所示。<font color="#3399ff">所有凸集都是星形的，但反过来不成立。</font>
 
-<!-- 4.18 -->
+<center>
+    <figure>
+        <img src="../../notebook\part2\images\fig4_18.JPG" width=240px>
+        <figcaption> 
+            Fig 4.18 微分同胚映射将星形空间映射到球形空间
+        </figcaption>
+    </figure>
+</center>
 
 &emsp;&emsp;对于两个自由构型空间$$M$$和$$F$$，如果$$\phi : M \rightarrow [0,1]$$是$$M$$上的一个导航函数，并且存在映射$$h : F \rightarrow M$$为微分同胚映射，i.e. 此映射是平滑的、双射的且有平滑的反函数，那么$$\Phi = \phi \circ h$$为$$F$$上的导航函数（如图4.18所示）。<font color="#3399ff">微分同胚映射可以保证临界点是一一对应的。</font>
 
@@ -434,7 +448,7 @@ $$
 
 其中，
 
-$$  \bar{\beta}_i  = \prod{j = 0, j \neq i}{n} \beta_j
+$$  \bar{\beta}_i  = \prod_{j = 0, j \neq i}^{n} \beta_j
 \tag{4.17}
 $$
 
