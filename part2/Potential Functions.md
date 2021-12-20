@@ -53,7 +53,7 @@ sort : 2
 
 <br />
 
-## 1 Additive Attractive/Repulsive Potential
+## 4.1 Additive Attractive/Repulsive Potential
 
 &emsp;&emsp;$$\mathcal{Q_{free}}$$中最简单的势函数就是attractive/repulsive potential。目标会吸引机器人，而障碍物会排斥它，它们共同作用引导机器人远离障碍到达目标点。势函数可以构造成二者之和$$ U(q) = U_{att}(q) + U_{rep}(q) $$。
 
@@ -169,7 +169,7 @@ $$
 
 <br />
 
-## 2 Gradient Descent
+## 4.2 Gradient Descent
 
 &emsp;&emsp;梯度下降法是解决优化问题的著名方法。梯度下降算法如algorithm 4所示。
 
@@ -183,11 +183,11 @@ $$
 
 <br />
 
-## 3 Computing Distance for Implementation in the Plane
+## 4.3 Computing Distance for Implementation in the Plane
 
 &emsp;&emsp;本节讨论如何构造吸引/排斥势函数。如果机器人当前位置和目标位置均已知，那么吸引势函数很简单。难度主要在于排斥势函数的计算，因为需要计算与障碍物的距离。本节介绍了两种计算距离及对应势函数的方法。第一种方法利用基于传感器的移动机器人来实现，借用第2章中通过传感器推断距离的思想。第二种方法假设构型空间被离散成像素栅格，并在栅格上计算距离。
 
-### 3.1 Mobile Robot Implementation
+### 4.3.1 Mobile Robot Implementation
 
 <center>
     <figure>
@@ -200,7 +200,7 @@ $$
 
 &emsp;&emsp;迄今为止，所有的讨论对于能够定义距离的构型空间具有一般性。考虑如图4.7所示的平面移动机器人，它装有放射状分布的距离传感器。这些距离传感器给出第2章中定义的原始距离函数$$\rho$$的近似。然而$$D(q)$$对应初始距离函数$$\rho$$的全局最小值，$$d_i(q)$$对应$$\rho(q,\theta)$$的局部最小值。比如，传感器会面向它对应的障碍物的最近的点，所以这些传感器指向能最大程度地将机器人移到距离障碍物最近的地方的方向，i.e. $$-\nabla d_i(q)$$。距离梯度指向与之相反。当障碍被另一个部分闭塞时，障碍距离函数可能会发生错误。
 
-### 3.2 Brushfire Algorithm: A Method to Compute Distance on a Grid
+### 4.3.2 Brushfire Algorithm: A Method to Compute Distance on a Grid
 
 &emsp;&emsp;这部分会介绍通过用栅格地图来计算距离的方法，栅格是被称为像素的二维正方形元素数组。当像素内完全没有障碍物的时候，其值为0；当像素完全或部分被障碍物占据时，其值为1。
 
@@ -236,7 +236,7 @@ $$
 
 <br />
 
-## 4 Local Minima Problem
+## 4.4 Local Minima Problem
 
 &emsp;&emsp;所有的梯度下降算法都有一个共通的问题：势场中可能存在局部极值。梯度下降法一般可以保证能收敛到场的一个极小值，但无法保证这个极小值是全局极小值，即无法保证能到达目标点。图4.10是机器人被卡在凹型障碍物中的情形。除了凹障碍物，还有其他情况会产生这种问题，如图4.11所示。**局部极小值是吸引、排斥法的严重缺陷，所以该方法不完全**。
 
@@ -264,7 +264,7 @@ Barraquand和Latombe提出了搜索的方法来克服利用势函数规划时的
 
 <br />
 
-## 5 Wave-Front Planner
+## 4.5 Wave-Front Planner
 
 &emsp;&emsp;<font color="#3399ff">波前规划器提供了局部极小值问题的最简单的解决，但是只能用于可栅格化的空间。</font>为了讨论方便，以二维空间为例。初始化时，规划器从标准的二进制网格开始，起点和目标点位置已知，目标点标记为2。首先，所有与目标相邻的0值像素标记为3。其次，所有与3邻接的标记为4。这个过程本质上**每次迭代都生成了一个从目标出发的波前，波前上所有的像素到目标的路径长度相等**。该步骤在波前到达起点所在像素的时候停止。
 
@@ -287,7 +287,7 @@ Barraquand和Latombe提出了搜索的方法来克服利用势函数规划时的
 
 <br />
 
-## 6 Navigation Potential Functions
+## 4.6 Navigation Potential Functions
 
 &emsp;&emsp;先前在第2章中，bug算法是未知环境下完全基于传感器的规划器，但是只能在平面构型空间使用。而在本章的开始，吸引/排斥势函数可以应用于很多不同类型的构型空间，但是存在局部极小值的问题，并因此不完全。波前规划器解决了局部极小值问题，但是需要时间和关于空间纬度呈指数上升的存储。本节将介绍一种新的势，只有一个最小值且只能适用于一种构型空间（二维、三维或更多）的表示与障碍物距离的函数。这种势函数被称为navigation function。
 
@@ -299,7 +299,7 @@ DEFINITION 4.6.4 函数$$ \phi : \mathcal{Q}_{free} \rightarrow [0,1] $$被称�
 
 &emsp;&emsp;Morse函数的临界点都是非退化的。这意味着临界点都是孤立的，所以Morse函数用于梯度下降时，任意随机扰动就会破坏鞍点和最大值点的稳定性。在导航函数法中，将障碍物表示成$$ \mathcal{QO}_i = \{ q \vert \beta_i(q) \le 0 \} $$，也就是说$$\beta_i(q)$$在$$\mathcal{QO}_i$$的内部为负，在$$\mathcal{QO}_i$$的边界为零，在$$\mathcal{QO}_i$$的外部为正。
 
-### 6.1 Sphere-Space
+### 4.6.1 Sphere-Space
 
 &emsp;&emsp;此方法初始假设构型空间的边界为一个球心位于$$q_0$$的球体，且有$$n$$个位于$$q_1,q_2,\ldots,q_n$$的障碍物。障碍物距离函数定义为
 
@@ -396,7 +396,7 @@ $$
 
 从图4.16中可以看到势函数变陡峭、临界点受目标点吸引和局部极值变为鞍点的过程。不幸的是，这种变陡的处理会使得导航函数在靠近目标和离目标较远时过于平坦，在两者之间时变化又很陡峭。这很容易使梯度下降方法出现数值误差。
 
-### 6.2 Star-Space
+### 4.6.2 Star-Space
 
 &emsp;&emsp;球形空间的结果只是通往更具一般性的规划器的第一步。有了能在球形空间使用的导航函数，就可以找到和它微分同胚的其它构型空间的导航函数。
 

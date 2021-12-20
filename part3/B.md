@@ -99,6 +99,24 @@ $$	\pmb{\Phi}(t,t_0) = \mathbf{X}(t) \mathbf{X}^{-1}(t_0)
 \tag{B.1.11}
 $$
 
+<br />
+
+## B.2 Linear Matrix Equations
+
+&emsp;&emsp;关于已知矩阵$$\mathbf{A}$$和$$\mathbf{Q}$$的未知矩阵$$\mathbf{P}$$的线性联立方程组写作
+
+$$  \mathbf{PA+A'P+Q} = 0
+\tag{B.2.1}
+$$
+
+特别地，如果$$\mathbf{Q}$$正定，那么就存在一个唯一的正定阵$$\mathbf{P}$$满足方程，当且仅当$$\mathbf{A}$$是渐近稳定的或$$ \lambda \{\mathbf{A}\} $$的实部$$ （\text{Re}）\lt 0 $$。(B.2.1)被称为<font color="#3FBF3F">Lyapunov equation</font>，解为
+
+$$  \mathbf{P} 
+=   \int_0^{\infin} e^{\mathbf{A}'t} \mathbf{Q} e^{\mathbf{A}t} dt
+\tag{B.2.2}
+$$
+
+
 
 &emsp;&emsp;
 <br />
