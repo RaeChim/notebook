@@ -1,8 +1,8 @@
 ---
-sort: 3
+sort: 4
 ---
 
-## Optimization & Optimal Control
+# Optimization & Optimal Control
 
 &emsp;&emsp;开始学路径规划之后，发现自己的控制理论方面基础还很薄弱，所以回顾了研究生课程Optimization & Optimal Control的部分内容。
 
