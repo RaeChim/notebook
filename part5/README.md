@@ -1,5 +1,5 @@
 ---
-sort: 5
+sort: 6
 ---
 
 # Linear Programming
@@ -105,3 +105,76 @@ $$
 * Geometric intuition
 * Algebraic manipulation
 * Computer progrmming
+
+### History of Linear Programming 
+
+* **Conceived** by G.B. Dantzig (1947) —— mechanized planning tool for deployment, training an logistic supply program in USAF.
+* **Named** by T.C. Koopmans & G. B. Dantzig (1948).
+* **Simplex Method** proposed by G. B. Dantzig (1948).
+* **Ellipsoid Method** proposed by L. G. Khachian (1979). —— First polynomial-time algorithm for LP.
+* **Interior-Point Method** proposed by N. Karmarkar (1984). —— First "good" polynomial-time alorithm for LP.
+
+### How to slove an LP problem ?
+
+**What's special about LP ?**
+
+——<font color="#3399ff">linear constraints</font>将可行域约束成具有有限个<font color="#3399ff">vertices</font>（顶点）的convex polyhedral set。
+
+——<font color="#3399ff">linear objective</font>函数为每个定值提供一个<font color="#3399ff">linear contour</font>。
+
+<font color="#3FBF3F">Fundamental Theorem of LP</font>：对于一个线性规划问题，如果可行域不为空，那么它的**optimum**是无限的或在可行域内至少有一个**顶点**。
+
+**How to find an optimal solution ？**
+
+**枚举法**——找到所有的顶点并比较选出最优的，但当$$ C(n,m) = \frac{n!}{m!(n-m)!} $$很大时不可行。
+
+**Simplex Method**
+
+&emsp;&emsp;基本思想：（沿边界行走）
+
+* Step 1 ：从一个顶点开始
+* Step 2 ：如果当前顶点最优则停止，否则
+* Step 3 ：向更好的相邻顶点移动，返回Step 2。
+
+**Is Simplex Method Good?**
+
+&emsp;&emsp;（1）一般来说，单纯型法很好用。
+
+&emsp;&emsp;（2）在最差的情况下，Klee和Minty (1971) 表明该方法需要遍历$$2^n-1$$个顶点。
+
+&emsp;&emsp;（3）exponential-time algorithm问题
+
+```tip
+Polynomial Time Algorithm: 如果一个算法对任何实例I所采取的步数都被一个多项式约束在I的大小内。
+Exponential-time algorithm: 如果一个算法不能在多项式时间内完成运算，那么它就是在指数时间内的。
+```
+
+**Is there a polynomial-time algorithm for LP?**
+
+L. G. khachian于1979年提出了Ellipsoid Method。
+
+&emsp;&emsp;基本思想
+
+LP的解的特征为最优条件
+
+$$  (*) \quad
+    \left \{ 
+        \begin{aligned}
+            & \mathbf{c}^T \mathbf{x} - \mathbf{b}^T \mathbf{w} = 0 \\
+            & \mathbf{Ax} \le \mathbf{b} ,\quad \mathbf{x} \ge 0 \\
+            & \mathbf{A}^T \mathbf{w} \ge \mathbf{c} ,\quad \mathbf{w} \ge 0 \\
+        \end{aligned}
+    \right.
+$$
+
+
+
+&emsp;&emsp;
+<br />
+$$
+$$
+$$  $$
+<!-- 蓝 -->
+<font color="#3399ff"></font>
+<!-- 绿 -->
+<font color="#3FBF3F"></font>
