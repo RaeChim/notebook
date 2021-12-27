@@ -49,7 +49,7 @@ Shu-Cherng Fang and Sarat Puthenpura, "Linear Optimization and Extensions: Theor
 
 # Introduction
 
-## What is Linear Programming (LP) ?
+## What is Linear Programming (LP)?
 
 &emsp;&emsp;Optimize a **linear objective** function of decision variables subject to a set of **linear constraints**.
 
@@ -74,7 +74,7 @@ $$
 
 其中，$$ \mathbf{c} \in R^n $$，$$ \mathbf{b} \in R^m $$，$$ \mathbf{A} \in R^{m \times n} $$，约束关系也可以为不等式，如$$\mathbf{Ax} \ge \mathbf{bx}$$或$$\mathbf{Ax} \le \mathbf{bx}$$。
 
-## Why Study Linear Programming ？
+## Why Study Linear Programming?
 
 * 应用广泛
 * 是以下课题的基础：
@@ -100,7 +100,7 @@ $$
 
 其中，$$x_{ij}$$为消耗在课题$$j$$上技能$$i$$的人力。
 
-## How to Study Linear Programming ?
+## How to Study Linear Programming?
 
 * Geometric intuition
 * Algebraic manipulation
@@ -114,17 +114,17 @@ $$
 * **Ellipsoid Method** proposed by L. G. Khachian (1979). —— First polynomial-time algorithm for LP.
 * **Interior-Point Method** proposed by N. Karmarkar (1984). —— First "good" polynomial-time alorithm for LP.
 
-## How to slove an LP problem ?
+## How to slove an LP problem?
 
-### What's special about LP ?
+### What's special about LP?
 
 — <font color="#3399ff">linear constraints</font>将可行域约束成具有有限个<font color="#3399ff">vertices</font>（顶点）的convex polyhedral set。
 
 — <font color="#3399ff">linear objective</font>函数为每个定值提供一个<font color="#3399ff">linear contour</font>。
 
-&emsp;&emsp;<font color="#3FBF3F">Fundamental Theorem of LP：对于一个线性规划问题，如果可行域不为空，那么它的**optimum**是无限的或在可行域内至少有一个**顶点**。</font>
+&emsp;&emsp;<font color="#3FBF3F">Fundamental Theorem of LP</font>：对于一个线性规划问题，如果可行域不为空，那么它的**optimum**是无限的或在可行域内至少有一个**顶点**。
 
-### How to find an optimal solution ？
+### How to find an optimal solution?
 
 **枚举法**——找到所有的顶点并比较选出最优的，但当$$ C(n,m) = \frac{n!}{m!(n-m)!} $$很大时不可行。
 
@@ -138,7 +138,7 @@ $$
 
 **Is Simplex Method Good?**
 
-&emsp;&emsp;（1）一般来说，单纯型法很好用。  
+&emsp;&emsp;（1）一般来说，单纯形法很好用。  
 &emsp;&emsp;（2）在最差的情况下，Klee和Minty (1971) 表明该方法需要遍历$$2^n-1$$个顶点。  
 &emsp;&emsp;（3）exponential-time algorithm问题
 
