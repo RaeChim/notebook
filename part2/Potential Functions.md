@@ -487,7 +487,7 @@ $$
 $$\begin{aligned}
   f^T J \dot{q} &= u^T \dot{q} \\
   f^T J &= u^T \\
-  J^T f = u \. \\
+  J^T f &= u . \\
 \end{aligned}
 $$
 
