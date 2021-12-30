@@ -195,10 +195,10 @@ $$
 ## Where to go?
 
 &emsp;&emsp;结合内点法发展用于解决实际应用中大规模的LP混合算法，从以下方面进行探索：  
-— 特殊结构
-— sparsity（稀疏度）
-— decomposition（分解）
-— 并行运算
+— 特殊结构  
+— sparsity（稀疏度）  
+— decomposition（分解）  
+— 并行运算  
 
 * Nonlinear optimization with linear constraints
 * Conic Programming
