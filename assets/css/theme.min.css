@@ -1,17 +1,17 @@
 :root
 {
-	--toc-1: #e6e9eb;
-	--toc-2: #ccd2d8;
-	--toc-3: #b3bcc4;
-	--toc-4: #9aa5b1;
-	--toc-5: #e6e9eb;
-	--toc-6: #ccd2d8;
-	--toc-7: #b3bcc4;
-	--toc-8: #9aa5b1;
-	--toc-9: #e6e9eb;
-	--toc-10: #ccd2d8;
-	--toc-11: #b3bcc4;
-	--toc-12: #9aa5b1
+	--toc-1: #4E5D5C;
+	--toc-2: #9CAAA9;
+	--toc-3: #BCCAC9;
+	--toc-4: #DBE2E1;
+	--toc-5: #EAEEED;
+	--toc-6: #EAEEED;
+	--toc-7: #EAEEED;
+	--toc-8: #EAEEED;
+	--toc-9: #EAEEED;
+	--toc-10: #EAEEED;
+	--toc-11: #EAEEED;
+	--toc-12: #EAEEED;
 }/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */html
 
 
@@ -260,7 +260,7 @@ body
 
 a
 {
-	color: #0366d6;
+	color: #70E9E1;
 	text-decoration: none
 }
 
@@ -6368,7 +6368,7 @@ p.explain .minibutton
 
 .toctree .caption
 {
-	color: #55a5d9;
+	color: #70E9E1;
 	font-weight: 600;
 	line-height: 32px
 }
@@ -6648,8 +6648,8 @@ p.explain .minibutton
 
 .header
 {
-	color: #fff;
-	background: #2980b9
+	color: #F9F9F9;
+	background: #2B3A39
 }
 
 .header input
