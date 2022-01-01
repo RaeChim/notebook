@@ -1,9 +1,9 @@
 :root
 {
-	--toc-1: #4E5D5C;
-	--toc-2: #9CAAA9;
-	--toc-3: #BCCAC9;
-	--toc-4: #DBE2E1;
+	--toc-1: #9CAAA9;
+	--toc-2: #BCCAC9;
+	--toc-3: #DBE2E1;
+	--toc-4: #EAEEED;
 	--toc-5: #EAEEED;
 	--toc-6: #EAEEED;
 	--toc-7: #EAEEED;
@@ -260,7 +260,7 @@ body
 
 a
 {
-	color: #70E9E1;
+	color: #1e9aff;
 	text-decoration: none
 }
 
@@ -6368,7 +6368,7 @@ p.explain .minibutton
 
 .toctree .caption
 {
-	color: #70E9E1;
+	color: #1e9aff;
 	font-weight: 600;
 	line-height: 32px
 }
