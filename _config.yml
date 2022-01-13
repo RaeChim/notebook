@@ -3,12 +3,21 @@ description: Rae
 
 theme: null
 
-siteurl: "https://raechim.xyz/notebook/"
+siteurl: "https://raechim.xyz/notebook"
 
 # debug:
 #   compress: true
 #   dist: false
 #   shortcodes: true
+gittalk:
+  enable:       true
+  clientID:     c2e10970760af1b9be01
+  clientSecret: 738136b1202a17601f65febd8e098bf3bfcb44a5
+  repo:         notebook
+  owner:        RaeChim
+  admin:        RaeChim
+  id:           comments
+
 
 readme_index:
   with_frontmatter: true
