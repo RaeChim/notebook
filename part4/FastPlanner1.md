@@ -48,7 +48,7 @@ sort: 2
 
 <center>
     <figure>
-        <img src="../../notebook/part4/images/Fast%20Plannner/Fig2.gif" width=400px >
+        <img src="./images/Fast%20Plannner/Fig2.gif" width=400px >
     </figure>
 </center>
 
@@ -56,7 +56,7 @@ sort: 2
 
 <center>
     <figure>
-        <img src="../../notebook/part4/images/Fast%20Plannner/Alg1.gif" width=400px >    
+        <img src="./images/Fast%20Plannner/Alg1.gif" width=400px >    
     </figure>
 </center>
 

@@ -16,7 +16,7 @@ sort : 2
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_1.JPG" width=300px>
+        <img src="./images/fig4_1.JPG" width=300px>
         <figcaption>
             Fig 4.1 负电荷吸引，正电荷排斥，生成了一条绕开障碍物到达目标点的路径，由虚线表示
         </figcaption>
@@ -27,7 +27,7 @@ sort : 2
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_2.JPG" width=400px>
+        <img src="./images/fig4_2.JPG" width=400px>
         <figcaption> Fig 4.2 临节点的不同类型：（上）函数的图像，（下）函数的梯度 </figcaption>
     </figure>
 </center>
@@ -39,7 +39,7 @@ sort : 2
 ```
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_3.JPG" width=450px>
+        <img src="./images/fig4_3.JPG" width=450px>
         <figcaption> 
             Fig 4.3 (a)含有三个障碍物的圆形边界的构型空间；(b)能量面的势函数；
             (c)能量面等值线图；(d)势函数的梯度向量
@@ -65,7 +65,7 @@ sort : 2
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_4.JPG" width=420px>
+        <img src="./images/fig4_4.JPG" width=420px>
         <figcaption> 
             Fig 4.4 (a)吸引梯度向量场；(b)吸引等势线；(c)吸引势的图像
         </figcaption>
@@ -99,7 +99,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_5.JPG" width=300px>
+        <img src="./images/fig4_5.JPG" width=300px>
         <figcaption> 
             Fig 4.5 排斥势只在障碍物的附近有效
         </figcaption>
@@ -133,7 +133,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_6.JPG" width=300px>
+        <img src="./images/fig4_6.JPG" width=300px>
         <figcaption> 
             Fig 4.6 距离为到障碍物上最近的点的距离。梯度是指向背离最近点方向的单位向量。
         </figcaption>
@@ -175,7 +175,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\alg4_1.JPG" width=400px>
+        <img src="./images/alg4_1.JPG" width=400px>
     </figure>
 </center>
 
@@ -191,7 +191,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_7.JPG" width=300px>
+        <img src="./images/fig4_7.JPG" width=300px>
         <figcaption> 
             Fig 4.7 射线的局部极值决定了到临近障碍物的距离
         </figcaption>
@@ -206,7 +206,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_8.JPG" width=360px>
+        <img src="./images/fig4_8.JPG" width=360px>
         <figcaption> 
             Fig 4.8 四点 VS 八点 连接
         </figcaption>
@@ -221,7 +221,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_9.JPG" width=400px>
+        <img src="./images/fig4_9.JPG" width=400px>
         <figcaption> 
             Fig 4.9 八点连接的brushfire算法的传播。实线穿过前面会碰撞的像素。
         </figcaption>
@@ -242,7 +242,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_10.JPG" width=320px>
+        <img src="./images/fig4_10.JPG" width=320px>
         <figcaption> 
             Fig 4.10 局部极小值在凹面内。机器人会一直向凹面移动，直到排斥梯度抵消吸引梯度。
         </figcaption>
@@ -251,7 +251,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_11.JPG" width=320px>
+        <img src="./images/fig4_11.JPG" width=320px>
         <figcaption> 
             Fig 4.11 无凹形障碍物情况下的局部极小值
         </figcaption>
@@ -272,7 +272,7 @@ Barraquand和Latombe提出了搜索的方法来克服利用势函数规划时的
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_12.JPG" width=400px>
+        <img src="./images/fig4_12.JPG" width=400px>
         <figcaption> 
             Fig 4.12 四点连接的波前传播情况（假设从右上角出发，目标为波前的原点）
         </figcaption>
@@ -335,7 +335,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_13.JPG" width=300px>
+        <img src="./images/fig4_13.JPG" width=300px>
         <figcaption> 
             Fig 4.13 解析开关函数，用于将函数的范围映射到单位区间
         </figcaption>
@@ -367,7 +367,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_14.JPG" width=180px>
+        <img src="./images/fig4_14.JPG" width=180px>
         <figcaption> 
             Fig 4.14 含5个圆形障碍物的边界为圆的构型空间
         </figcaption>
@@ -378,7 +378,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_15.JPG" width=500px>
+        <img src="./images/fig4_15.JPG" width=500px>
         <figcaption> 
             Fig 4.15 κ=3,κ=4,κ=6,κ=7,κ=8和κ=10对应的导航函数
         </figcaption>
@@ -387,7 +387,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_16.JPG" width=500px>
+        <img src="../../notebook/part2/images/fig4_16.JPG" width=500px>
         <figcaption> 
             Fig 4.16 κ=3,κ=4,κ=6,κ=7,κ=8和κ=10对应的导航函数
         </figcaption>
@@ -402,7 +402,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_17.JPG" width=240px>
+        <img src="./images/fig4_17.JPG" width=240px>
         <figcaption> 
             Fig 4.17 （左）星形集。（右）非星形集
         </figcaption>
@@ -413,7 +413,7 @@ $$
 
 <center>
     <figure>
-        <img src="../../notebook\part2\images\fig4_18.JPG" width=240px>
+        <img src="./images/fig4_18.JPG" width=240px>
         <figcaption> 
             Fig 4.18 微分同胚映射将星形空间映射到球形空间
         </figcaption>
