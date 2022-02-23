@@ -18,23 +18,21 @@ sort: 7
 
 Learning = <font color="#FF4500">improving</font> with <font color="#FF4500">experience</font> at same <font color="#FF4500">task</font> -- Tom M. Mitchell
 
-<font color="#3399ff">T (Task) &emsp;&emsp; E (Experience) &emsp;&emsp; P(Performance)</font>
+<b><font color="#00B050">T (Task) &emsp;&emsp; E (Experience) &emsp;&emsp; P(Performance)</font></b>
 
-<b><font color="#00B050">Learning: change / construct or modify / improve</font></b>
+```tip
+Learning: change / construct or modify / improve
+```
 
 ### 如何设计一个机器学习系统？
 
 **Training Experience**
 
-&emsp;&emsp;What experience?
-
-注意<font color="#3399ff">training data bias: data, training procedure, features</font>
-
-&emsp;&emsp;What exactly should be learned?
-
-&emsp;&emsp;How shall it be represented?
-
-&emsp;&emsp;What specific algorithm to learn it?
+* *What experience?  
+注意<font color="#3399ff">training data bias: data, training procedure, features</font>  
+* *What exactly should be learned?
+* How shall it be represented?
+* What specific algorithm to learn it?
 
 
 ## 2 Preliminary: 基本概念
