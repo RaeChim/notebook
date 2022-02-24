@@ -28,9 +28,9 @@ Learning: change / construct or modify / improve
 
 **Training Experience**
 
-* *What experience?  
+* What experience?  
 注意<font color="#3399ff">training data bias: data, training procedure, features</font>  
-* *What exactly should be learned?
+* What exactly should be learned?
 * How shall it be represented?
 * What specific algorithm to learn it?
 
