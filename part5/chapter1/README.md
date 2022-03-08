@@ -47,8 +47,6 @@ Learning: change / construct or modify / improve
 
 <br />
 
-## 3 参考资料
+## 3 课程资料
 
 [清华大学-机器学习概论](https://www.bilibili.com/video/BV17q4y1A7Vp?p=1)
-
-[吴恩达]
