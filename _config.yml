@@ -3,7 +3,8 @@ description: Rae
 
 theme: null
 
-siteurl: "https://raechim.xyz/notebook"
+url: "https://raechim.xyz"
+baseurl: "/notebook"
 
 # debug:
 #   compress: true
