@@ -27,10 +27,38 @@ sort: 3
 
 &emsp;&emsp;本章将介绍5种roadmap：visibility maps, deformation retracts, retract-like structures, piecewise retracts and silhouettes。Visibility maps往往适用于具有多边形障碍的构型空间。Deformation retractions类似于融化的冰或燃烧的草地。用于silhouettes法的表示是通过将机器人的多维自由空间的阴影重复投影到低维空间来构建的，直到形成一维网络。
 
+## 5.1 Visibility Maps
+
+&emsp;&emsp;<b><font color="#00B050">Visibility map</font></b>的定义特征是，<b><font color="#00B050">如果节点在彼此的视线范围内，那么这些节点共享一条边，并且机器人自由空间中的所有点都在visibility map上至少一个节点的视线范围内。</font></b>第二点意味着visibility map，根据定义，具有可访问性和可离开性。连通性是使得每个地图的结构成为roadmap所必须明确证明的一点。本节将考虑最简单的visibility map，称为visibility graph。
+
+### 5.1.1 Visibility Graph Definition
+
+&emsp;&emsp;标准可视图是定义在一个二维多边形构型空间中的（图5.3）。可视图的节点$$v_i$$包含了起始未知、目标位置以及构型空间中障碍物的所有顶点。图的边$$e_{ij}$$是连接两个视线节点$$v_i$$和$$v_j$$的直线段，i.e. $$e_{ij} \neq \emptyset \ \Longleftrightarrow \ s v_i + (1-s)v_j \ \in \text{cl}(\mathcal{Q}_{\text{free}}) \ \forall s \in [0, 1]$$。
+
+<figure>
+    <img src="./images/fig5_3.JPG" width=300px>
+    <figcaption>
+        Fig 5.3 多边形构型空间、起点和目标
+    </figcaption>
+</figure>
+
+**注意**，我们将节点和边嵌入到自由空间中，并且多边形障碍物的边也视作可视图中的边。
+
+<figure>
+    <img src="./images/5-4.JPG" width=360px>
+    <figcaption>
+        Fig 5.4 细实线描绘了填充了三个多边形障碍物的可视图的边。粗虚线表示起点和目标之间的最短路径。
+    </figcaption>
+</figure>
+
+&emsp;&emsp;利用标准二范数（欧几里得距离），可以搜索可视图的最短路径（图5.4）。可视图的定义可以被推广到具有多面体障碍物的三维构型空间，但是不一定包含这样的空间中的最短路径。
+
+&emsp;&emsp;不幸的是，可视图有很多不必要的边。利用supporting和separating lines可以减少边的数量。
 
 
 
-<!-- page 127 -->
+
+<!-- page 128 -->
 <!-- 蓝 -->
 <font color="#3399ff"></font>
 <!-- 绿 --><!-- #33cc00 -->
