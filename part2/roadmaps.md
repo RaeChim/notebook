@@ -7,7 +7,7 @@ sort: 3
 &emsp;&emsp;根据第2章和第4章的内容可知，规划器规划的是一条从某个指定开始构型到另一个指定结束构型的路径。如果在同一个环境中需要规划很多路径，那么就有必要构建一种数据结构来提高规划子路径的速度。这个**数据结构**就称为<b><font color="#00B050">map</font></b>，而**根据传感器数据生成机器人环境模型的任务**就称为<b><font color="#00B050">mapping</font></b>。在**室内**系统的背景下，三种地图概念占主导地位：**拓扑、几何和栅格**（如图5.1所示）。
 
 <figure>
-    <img src="./images/fig5_1.JPG" width=400px>
+    <img src="./images/fig5_1.JPG" width=500px>
     <figcaption>
         Fig 5.1 表示环境的不同方法：拓扑、几何和运用栅格
     </figcaption>
