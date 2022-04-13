@@ -2,6 +2,6 @@
 sort: 1
 ---
 
-# Operations Research
+# 《运筹学导论》
 
-&emsp;&emsp;《Introduction to Operations Research》(9th Edition) 一书的阅读笔记，编号均与书中对应。
+&emsp;&emsp;《Introduction to Operations Research》(9th Edition) 一书的阅读笔记，编号均与书中对应。中文译本参考的是由清华大学出版社出版、胡运权等人翻译的《运筹学导论》，但是这本译本只挑选了部分章节，而且很多地方都是直译，讲解不如原版清晰。此外，这本书中对于单纯形法的介绍不太适合入门，更推荐方教授在线性规划一课中的讲解。
