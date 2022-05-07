@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# 强化学习
+# 强化学习纲要
 
 &emsp;&emsp;本笔记主要参考[香港中文大学助理教授周博磊的强化学习纲要](https://space.bilibili.com/511221970/channel/seriesdetail?sid=764099)一课，并结合了Richard S. Sutton和Andrew G. Barto的[《Reinforcement Learning: An Introduction》](http://incompleteideas.net/book/the-book-2nd.html)(2th edition)中的部分内容。
 
