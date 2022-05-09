@@ -34,11 +34,10 @@ Dimitri P. Bertsekas的2022 Reinforcement Learning course [课程主页](http://
 
 刘建平Pinard [Github](https://github.com/ljpzzz/machinelearning) [博客](https://www.cnblogs.com/pinard)
 
-[TheWindOfJune的强化学习专栏](https://blog.csdn.net/weixin_43450646/category_10019516.html?spm=1001.2014.3001.5482)
-
 [YJLAugus的笔记](https://github.com/YJLAugus/Reinforcement-Learning-Notes)
 
 [2ez4ai的笔记](https://github.com/2ez4ai/Reinforcement_Learning_Notes/blob/master/Reinforcement%20Learning%20Notes.pdf)
 
+[TheWindOfJune的强化学习专栏](https://blog.csdn.net/weixin_43450646/category_10019516.html?spm=1001.2014.3001.5482)
 
 
