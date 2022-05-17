@@ -9,4 +9,7 @@ sort: 3
 
 ## 其它资料
 
+俞勇教授团队的[动手学强化学习](https://hrl.boyuai.com)（目前还在更新中）
+
 白话强化学习 [知乎专栏](https://www.zhihu.com/column/c_1215667894253830144) [Github](https://github.com/louisnino/RLcode)
+
