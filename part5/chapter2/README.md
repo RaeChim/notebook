@@ -30,6 +30,10 @@ Dimitri P. Bertsekas的2022 Reinforcement Learning course [课程主页](http://
 
 [shuhuai008的白板推导系列课程](https://space.bilibili.com/97068901?spm_id_from=333.788.b_765f7570696e666f.1) [参考笔记(by YJLAugus)](https://www.yuque.com/yjlaugus/reinforcement-learning-notes)
 
+俞勇教授团队的[动手学强化学习](https://hrl.boyuai.com)（目前还在更新中）
+
+白话强化学习 [知乎专栏](https://www.zhihu.com/column/c_1215667894253830144) [Github](https://github.com/louisnino/RLcode)
+
 [蘑菇书EasyRL](https://datawhalechina.github.io/easy-rl/#/)
 
 刘建平Pinard [Github](https://github.com/ljpzzz/machinelearning) [博客](https://www.cnblogs.com/pinard)
