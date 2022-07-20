@@ -34,7 +34,7 @@ sort: 3
 
 &emsp;&emsp;一个窃贼有一个大小为$$b$$的背包。他闯入一家商店，里面有$$n$$件物品。每件物品都有价值$$c_j$$和大小$$a_j$$。窃贼应该选择哪些物品来优化其盗窃行为？
 
-&emsp;&emsp;令$$x_j = \begin{cases} 1,\ \text{选了第} j \text{个物品} \\ 0,\ \text{Otherwise} \end{cases}$$，问题可以建模为0-1整数规划模型：
+&emsp;&emsp;令$$x_j = \begin{cases} 1,\ \text{选了第} j \text{个物品} \\ 0,\ \text{otherwise} \end{cases}$$，问题可以建模为0-1整数规划模型：
 
 $$\begin{array}{ll}
     \max & \sum_{j=1}^{n} c_{j} x_{j} \\
@@ -44,7 +44,7 @@ $$\begin{array}{ll}
 
 **Example 3 指派问题 (Assignment Problem)**
 
-&emsp;&emsp;$$n$$个人可以做$$n$$项工作，每个人可以被指派去做一个工作，每个人$$i$$做工作$$j$$的成本为%%c_{ij}$$。问题是找到一个分配方法使成本最低。
+&emsp;&emsp;$$n$$个人可以做$$n$$项工作，每个人可以被指派去做一个工作，每个人$$i$$做工作$$j$$的成本为$$c_{ij}$$。问题是找到一个分配方法使成本最低。
 
 &emsp;&emsp;令$$x_{ij} = \begin{cases} 1,\ \text{如果第} j \text{个人做工作}j \\ 0,\ \text{Otherwise} \end{cases}$$，问题可以表述为
 
@@ -166,7 +166,7 @@ $$\begin{array}{lll}
 
 ## Examples from Combinatorial Optimization
 
-**Example 1 (Set Covering Problem)**
+**Example 1 集合覆盖问题 (Set Covering Problem)**
 
 &emsp;&emsp;考虑一定数量的地区，问题是决定在哪里安装一套应急服务中心。对于每个可能的中心，安装服务中心的成本以及可以服务的地区都是已知的。目标是选择一组成本最低的服务中心，以便覆盖每个地区。
 
@@ -179,7 +179,24 @@ $$\begin{array}{lll}
     & x \in \{ 0, 1 \}^n
 \end{array}$$
 
-**Example 2: Facility location problem**
+是一个NP-hard问题。
+
+**Example 2 设施选址问题 (Facility location problem)**
+
+&emsp;&emsp;给定一组$$N = \{1, \ldots, n\}$$的潜在设施位置和一组客户$$M = \{1, \ldots, m\}$$。位于$$j$$处的设施成本为$$f_j, \text{ for} j \in N$$，位于$$j$$处的设施满足客户$$i$$的需求得到利润$$c_{ij}$$。问题是选择放置设施的位置子集，然后将客户分配到这些设施，以使总利润最大化。
+
+&emsp;&emsp;令$$x_j=1$$，如果有一个设施在$$j$$处，否则$$x_j=0$$。令$$y_{ij}$$为客户$$i$$的需求中由j处的设施满足的比例。  
+&emsp;&emsp;问题可以表述为
+
+$$\begin{array}{llll}
+    \max & \sum_{i \in M} \sum_{j \in N} c_{ij} y_{ij} - \sum_{j \in N} f_j x_j \\
+    \text {s.t.} & \sum_{j \in N} y_{ij}=1, \forall i \in M \\
+    & y_{ij} \le x_j, \forall i \in M, j \in N \\
+    & x \in \{ 0, 1 \}^n, y \in \mathcal{R}_+^{mn}
+\end{array}$$
+
+
+
 
 
 
