@@ -181,7 +181,7 @@ $$\begin{array}{lll}
 
 是一个NP-hard问题。
 
-**Example 2 设施选址问题 (Facility location problem)**
+**Example 2 设施选址问题 (Facility Location Problem)**
 
 &emsp;&emsp;给定一组$$N = \{1, \ldots, n\}$$的潜在设施位置和一组客户$$M = \{1, \ldots, m\}$$。位于$$j$$处的设施成本为$$f_j, \text{ for} j \in N$$，位于$$j$$处的设施满足客户$$i$$的需求得到利润$$c_{ij}$$。问题是选择放置设施的位置子集，然后将客户分配到这些设施，以使总利润最大化。
 
@@ -195,17 +195,58 @@ $$\begin{array}{llll}
     & x \in \{ 0, 1 \}^n, y \in \mathcal{R}_+^{mn}
 \end{array}$$
 
+**Example 3 旅行商问题 (Traveling Salesman Problem, TSP)**
 
+&emsp;&emsp;旅行商在回家之前必须访问$$n$$个城市中的每一个。他知道每个城市之间的距离，并希望在访问所有城市时尽量减少总行程。问：他应该以什么顺序访问这些城市？
 
+&emsp;&emsp;令从城市$$i$$到城市$$j$$的距离为$$c_{ij}$$，令$$x_{ij} = \begin{cases} 1, \text{ 如果直接从} i \text{到} j \\ 0, \text{otherwise} \end{cases}$$。  
+约束：  
+1. 他只离开城市$$i$$一次：$$\sum_{j \neq i} x_{ij} = 1, i = 1,\ldots,n$$  
+2. 他只到达城市$$i$$一次：$$\sum_{i \neq j} x_{ij} = 1, j = 1,\ldots,n$$
+3. 子路径消除约束：$$\sum_{i \in S}\sum_{j \notin S} x_{ij} \ge 1, \forall S \subset N = \{ 1,\ldots,n \}, S \neq \emptyset $$或$$\sum_{i \in S}\sum_{j \in S} x_{ij} \le |S| - 1,  \forall S \subset N, 2 \le |S| \le n-1$$
 
+&emsp;&emsp;问题可以表述为
 
+$$\begin{array}{lllll}
+    \min & \sum_{i=1}^n \sum_{j=1}^n c_{ij} x_{ij}  \\
+    \text {s.t.} & \sum_{j \neq i} x_{ij} = 1, i = 1,\ldots,n   \\
+    & \sum_{i \neq j} x_{ij} = 1, j = 1,\ldots,n    \\
+    & \sum_{i \in S}\sum_{j \in S} x_{ij} \le |S| - 1,  \forall S \subset N, 2 \le |S| \le n-1  \\
+    & x \in \{ 0, 1 \}^n
+\end{array}$$
 
+<figure>
+    <img src="./images/0/2.JPG" width=600px>
+</figure>
 
-<br />
-<!-- 蓝 -->
-<b><font color="#3399ff"></font></b>
-<!-- 绿 -->
-<b><font color="#00B050"></font></b>
-<!-- 橙 -->
-<font color="#FF4500"></font>
+&emsp;&emsp;与TSP相关的一个问题是**车辆路由问题（vehicle routing problem）**：位于中央仓库的许多车辆必须服务于地理上围绕仓库的一组客户。每辆车都有一个给定的容量，每个客户都有一个给定的需求。目标是最小化总旅行距离。
 
+<figure>
+    <img src="./images/0/3.JPG" width=250px>
+</figure>
+
+**Example 4 一般指派问题 (Generalized Assignment Problem)**
+
+&emsp;&emsp;给定$$m$$台机器和$$n$$个作业，找到不超过机器容量最小成本分配。每个作业$$j$$需要$$a_{ij}$$单位的机器$$i$$容量$$b_i$$。  
+&emsp;&emsp;该问题可以建模为
+
+$$\begin{array}{llll}
+    \min & \sum_{i=1}^m \sum_{j=1}^n c_{ij} x_{ij}  \\
+    \text {s.t.} & \sum_{j=1}^n a_{ij}x_{ij} \le b_i, \forall i \text{ （机器容量）}   \\
+    & \sum_{i=1}^m x_{ij}=1, \forall j \text{ （分配所有作业）}   \\
+    & x_{ij} \in \{ 0, 1 \}, \forall i, j
+\end{array}$$
+
+是一个NP-hard问题。
+
+**Example 5 最小网络流 (Minimum Cost Network Flows)**
+
+**Example 6 最短路径问题 (Shortest Path Problem)**
+
+**Example 7 最大流问题 (Maximum Flow Problem)**
+
+### Nonlinear Integer Programming Models
+
+**Example 1 投资组合优化 (Portfolio Optimization)**
+
+**Example 2 最大割 (Maximum Cut)**
