@@ -203,7 +203,7 @@ $$\begin{array}{llll}
 约束：  
 1. 他只离开城市$$i$$一次：$$\sum_{j \neq i} x_{ij} = 1, i = 1,\ldots,n$$  
 2. 他只到达城市$$i$$一次：$$\sum_{i \neq j} x_{ij} = 1, j = 1,\ldots,n$$
-3. 子路径消除约束：$$\sum_{i \in S}\sum_{j \notin S} x_{ij} \ge 1, \forall S \subset N = \{ 1,\ldots,n \}, S \neq \emptyset $$或$$\sum_{i \in S}\sum_{j \in S} x_{ij} \le |S| - 1,  \forall S \subset N, 2 \le |S| \le n-1$$
+3. 子路径消除约束：$$\sum_{i \in S}\sum_{j \notin S} x_{ij} \ge 1, \forall S \subset N = \{ 1,\ldots,n \}, S \neq \emptyset $$或$$\sum_{i \in S}\sum_{j \in S} x_{ij} \le \vert S \vert - 1,  \forall S \subset N, 2 \le \vert S \vert \le n-1$$
 
 &emsp;&emsp;问题可以表述为
 
