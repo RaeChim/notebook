@@ -8,7 +8,7 @@ A Graduate Level Course
 
 Shu-Cherng Fang
 
-美国北卡莱罗纳大学方述诚教授在台湾国立交通大学的公开课的学习笔记。
+美国北卡莱罗纳大学方述诚教授在台湾国立交通大学的[线性规划公开课](https://www.bilibili.com/video/BV1A5411r7TK?)的学习笔记。
 
 <br />
 
