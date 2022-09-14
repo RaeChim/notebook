@@ -1,5 +1,5 @@
 ---
-sort : 1
+sort : 3
 ---
 
 # Configuration Space
@@ -9,6 +9,30 @@ sort : 1
 
 ## 3.1 Specifying a Robot’s Configuration
 
+&emsp;&emsp;机器人系统的<b><font color="#00B050">configuration</font></b>是系统每一点位置的complete specification。机器人的<b><font color="#00B050">configuration space</font></b>（或C-space）是系统所有可能构型构成的空间。因此，构型只是抽象的构型空间中的一个点。本书中用$$\color{green}{q}$$表示构型，用$$\color{green}{\mathcal{Q}}$$表示构型空间。一个机器人系统的**自由度**的数量就是构型空间的维度，或者说是用于指定构型所需的最少的参数的个数。
+
+&emsp;&emsp;以平面内可以任一平移（无需旋转）的圆形移动机器人为例，一个比较简单的表示机器人构型的方法就是确定其中心关于某个固定坐标系所在的位置$$(x, y)$$。如果知道机器人的半径$$r$$，就可以很容易地从构型$$q = (x, y)$$确定机器人占据的点集，我们用$$R(q)$$来表示这个点集。当我们把构型定义为$$q = (x, y)$$时，我们有$$R(x, y) = \{ (x', y') \mid (x - x')^2 + (y- y')^2 \le r^2 \}$$。其中，参数$$x$$和$$y$$足以完全确定圆形机器人的构型。因此，一旦确定了平面内的坐标系，就可以用$$\mathbb{R}^2$$来描述圆形移动机器人的构型。
+
+&emsp;&emsp;机器人在二维或三维欧几里得环境空间（分别表示为$$\mathbb{R}^2$$和$$\mathbb{R}^3$$）中移动时，有时我们会把这个环境空间称为<b><font color="#00B050">workspace</font></b>。其他时候，我们对“**workspace**”会有一个更具体的含义。比如，对于机械臂，我们一般把手部或末端执行器（end effector）上的点到达的环境空间点的集合称为工作空间（图3.3）。对于上述平移的移动机器人，工作空间和构型空间都是二维欧几里得空间，但要注意它们其实是不同的空间。下面我们考虑稍微复杂一点的机器人时，这点会体现得更清楚。
+
+<figure>
+    <img src="./images/3-1.JPG" width=250px>
+    <figcaption>Fig 3.1 两个关节角度指定了连关节机器人的构型<figcaption>
+</figure>
+
+&emsp;&emsp;考虑一个如图3.1所示的两关节平面机械臂。机械臂的link 1的一端是固定的，所以link 1只能只能绕这个关节旋转。类似地，link 2的一端固定在link 1的末端，所以link 2只能绕这个关节旋转。因此，如果指定参数$$\theta_1$$和$$\theta_2$$，就可以指定机械臂的构型。现在我们将假设没有关节限制，因此两个关节移动的时候可以交叠。
+
+&emsp;&emsp;每个关节角$$\theta_i$$对应单位圆$$S^1$$上的一个点
+
+
+
+
+<br />
+<b><font color="#3399ff"></font></b>
+<!-- 绿 --><!-- #33cc00 -->
+<b><font color="#00B050"></font></b>
+<!-- 橙 -->
+<b><font color="#FF4500"></font></b>
 
 ## 3.6 Parameterizations of SO(3)
 
@@ -17,7 +41,6 @@ sort : 1
 ## 3.7 Example Configuration Spaces
 
 &emsp;&emsp;<font color="#3399ff">设计运动规划器的时候，理解机器人构型空间的基础结构通常是十分重要的。</font>
-
 * $$ S^1 \times S^1 \times \cdots \times S^1 (n \text{times}) = T^n $$，n维圆环面
 * $$ S^1 \times S^1 \times \cdots \times S^1 (n \text{times}) \neq S^n $$，$$ \mathbb{R}^{n+1} $$中的n维球体
 * $$ S^1 \times S^1 \times S^1 \neq SO(3) $$

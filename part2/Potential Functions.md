@@ -1,5 +1,5 @@
 ---
-sort : 2
+sort : 4
 ---
 
 # Potential Functions
@@ -14,38 +14,35 @@ sort : 2
 本章主要讨论一阶系统（i.e. 忽略动力学），所以把梯度看成速度向量而非力向量。
 ```
 
-<center>
-    <figure>
-        <img src="./images/fig4_1.JPG" width=300px>
-        <figcaption>
-            Fig 4.1 负电荷吸引，正电荷排斥，生成了一条绕开障碍物到达目标点的路径，由虚线表示
-        </figcaption>
-    </figure>
-</center>
+<figure>
+    <img src="./images/fig4_1.JPG" width=300px>
+    <figcaption>Fig 4.1 负电荷吸引，正电荷排斥，生成了一条绕开障碍物到达目标点的路径，由虚线表示</figcaption>
+</figure>
+
 
 &emsp;&emsp;势函数可以看作地形，机器人在上面从高值态运动到低值态。机器人沿着势函数的负梯度下降，沿着这种路径的方法被称为<font color="#3FBF3F">梯度下降（gradient descent）</font>，i.e. $$ \dot{c}(t) = - \nabla U(c(t)) $$。
 
-<center>
-    <figure>
-        <img src="./images/fig4_2.JPG" width=400px>
-        <figcaption> Fig 4.2 临节点的不同类型：（上）函数的图像，（下）函数的梯度 </figcaption>
-    </figure>
-</center>
+
+<figure>
+    <img src="./images/fig4_2.JPG" width=400px>
+    <figcaption> Fig 4.2 临节点的不同类型：（上）函数的图像，（下）函数的梯度 </figcaption>
+</figure>
+
 
 &emsp;&emsp;机器人会停在梯度为零的点$$q^*$$（$$\nabla U(q^*) = 0$$），这种点称为<font color="#3FBF3F">临界点</font>。该点的类型（最大值、最小值或鞍点，如图4.2所示）由二阶微分决定。对于实值函数，二阶微分为<font color="#3FBF3F">Hessian矩阵</font>。若Hessien在$$q^*$$处非奇异，则$$q^*$$处的临界点是<font color="#3FBF3F">非退化的</font>，表明该点是孤立的。Hessian正定对应局部极小值；负定对应局部极大值。一般来说，只考虑Hessian非奇异的势函数，i.e. 只含孤立临界点的势函数，这样的势函数没有平坦的部分。
 
 ```note
 对于梯度下降法，无需计算Hessian，因为机器人一般只能在局部极小值点终止运动，而非局部极大值点或鞍点。只有局部极小值点才是稳定的，因为机器人在该点受到扰动后还是会回到这个极小值点。目标点应该落在局部极小值点。
 ```
-<center>
-    <figure>
-        <img src="./images/fig4_3.JPG" width=450px>
-        <figcaption> 
-            Fig 4.3 (a)含有三个障碍物的圆形边界的构型空间；(b)能量面的势函数；
-            (c)能量面等值线图；(d)势函数的梯度向量
-        </figcaption>
-    </figure>
-</center>
+
+<figure>
+    <img src="./images/fig4_3.JPG" width=450px>
+    <figcaption> 
+        Fig 4.3 (a)含有三个障碍物的圆形边界的构型空间；(b)能量面的势函数；
+        (c)能量面等值线图；(d)势函数的梯度向量
+    </figcaption>
+</figure>
+
 
 &emsp;&emsp;有许多有效且可以在线计算的势函数，但是它们有一个**共通的问题：局部极小值的位置和目标不匹配**。也就是说，很多势函数无法得出完备的路径规划器。解决这个问题有两种思路：1.利用基于采样的规划器对势场进行增广；2.定义只有一个局部极小值点的势函数，被称为navigation function。尽管完备（或解析完备），这些方法都需要在规划前对构型空间有充分的了解。
 
