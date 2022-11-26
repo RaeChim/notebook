@@ -2,9 +2,9 @@
 sort: 1
 ---
 
-# 论文学习
+# 论文笔记
 
-记录一些论文的学习笔记，目前包含：
+记录一些论文的学习笔记，目前包含以下方面：
 
-1. Online Safe Trajectory Generation For Quadrotors Using Fast Marching Method and Bernstein Basis Polynomial
-2. Robust and Efficient Quadrotor Trajectory Generation for Fast Autonomous Flight
+1. 路径规划
+2. 强化学习
